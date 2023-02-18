@@ -1,19 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 
 const Header = () => {
   
   return (
-    <div className='header'>
-        <div className='header-home'>
-            <h1>Hello</h1>
-            <div className='header-home-search'>
-                <input type="text" placeholder='Nhấp thông tin'/>
-                <a href="#"><i className='bx bx-search-alt'></i></a>
-            </div>
-            <button className='btnLogout'>Logout</button>
+    
+        <div className='top'>
+          <i className='bx bx-menu sidebar-toggle'></i>
+          <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" />
         </div>
-    </div>
+    
   )
 }
 

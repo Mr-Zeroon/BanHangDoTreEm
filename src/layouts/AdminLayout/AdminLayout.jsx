@@ -7,9 +7,11 @@ const HomeLayout = () => {
   return (
     <div className="App">
         <Menu/>
-        <div className='App_right'>
+        <div className='App-content'>
             <Header/>
-            <Outlet/>
+            <div className='outlet' style={{marginTop: 60}}>
+                <Outlet/>
+            </div>
         </div>
         
     </div>

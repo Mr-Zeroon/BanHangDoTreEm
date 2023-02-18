@@ -1,18 +1,18 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomeLayout from './layouts/HomeLayout/HomeLayout';
+import AdminLayout from './layouts/AdminLayout/AdminLayout'
 import Home from './components/Content/Home/Home';
-import QuanLyKhachHang from './components/Content/QuanLyKhachHang/QuanLyKhachHang';
-import QuanLySanPham from './components/Content/QuanLySanPham/QuanLySanPham';
+import Customer from './components/Content/Customer/Customer';
+import Customerbtn from './components/Content/Customer/Customerbtn/Customerbtn';
 function App() {
   return (
     <div >
-        <Router>
+      <Router>
             <Routes>
-                <Route path='/' element={<HomeLayout/>}>
+                <Route path='/' element={<AdminLayout/>}>
                     <Route index path='/' element={<Home/>}/>
-                    <Route index path='/quanlikhachhang' element={<QuanLyKhachHang/>}/>
-                    <Route index path='/quanlisanpham' element={<QuanLySanPham/>}/>
+                    <Route  path='/customer' element={<Customer/>}/>
+                    <Route  path='/customer/add' element={<Customerbtn/>}/>
                 </Route>
             </Routes>
         </Router>

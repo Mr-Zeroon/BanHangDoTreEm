@@ -4,29 +4,44 @@ import { Link } from 'react-router-dom'
 const Menu = () => {
     
   return (
-    <div className='menu'>
-        <h1 className='menu-title'>ADMIN</h1>
-        <div className='menu-content'>
-            <ul>
-                <li>
-                    <i className='bx bxs-home'></i>
-                    <Link to="/" value='Home'>Home</Link>
-                </li>
-                <li>
-                    <i className='bx bxs-user-circle'></i>
-                    <Link to="/quanlikhachhang" value='Quản Lý Khách Hàng'>Quản Lý Khách Hàng</Link>
-                </li>
-                <li>
-                    <i className='bx bx-store-alt'></i>
-                    <Link to="/quanlisanpham">Quản Lý Sản Phẩm</Link>
-                </li>
-                <li>
-                    <i className='bx bx-cart-add'></i>
-                    <a href="#">Quản Lý Bán Hàng</a>
-                </li>
+    <nav className='nav'>
+        <div className='logo-name'>
+            <div className="logo-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43fbvLFe8evGPwwSmvx9iIsepT4B7dCPeSQ&usqp=CAU" alt="" />
+            </div>
+        </div>
+        <div className="menu-items">
+            <ul className="nav-links">
+                <li><Link to="/">
+                  <i className='bx bx-home'></i>
+                  <span className='link-name'>Dashboard</span>
+                </Link></li>
+                <li><Link to="/customer">
+                <i className='bx bx-user-circle'></i>
+                  <span className='link-name'>Customer </span>
+                </Link></li>
+                <li><a href="#">
+                <i className='bx bxl-product-hunt' ></i>
+                  <span className='link-name'>Product</span>
+                </a></li>
+                <li><a href="#">
+                <i className='bx bx-cart-add'></i>
+                  <span className='link-name'>Selling</span>
+                </a></li>
+                <li><a href="#">
+                <i className='bx bxs-user-rectangle'></i>
+                  <span className='link-name'>Admin</span>
+                </a></li>
             </ul>
-        </div>  
-    </div>
+
+            <ul className='logout-mode'>
+              <li><a href="#">
+                <i className='bx bx-log-out'></i>
+                <span className='link-name'>Logout</span>
+              </a></li>
+            </ul>
+        </div>
+    </nav>
   )
 }
 

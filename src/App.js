@@ -4,6 +4,9 @@ import AdminLayout from './layouts/AdminLayout/AdminLayout'
 import Home from './components/Content/Home/Home';
 import Customer from './components/Content/Customer/Customer';
 import Customerbtn from './components/Content/Customer/Customerbtn/Customerbtn';
+import Header from './components/User/Header';
+import HomePage from './pages/HomePage';
+import Footer from './components/User/Footer';
 function App() {
   return (
     <div >
@@ -15,7 +18,10 @@ function App() {
                     <Route  path='/customer/add' element={<Customerbtn/>}/>
                 </Route>
             </Routes>
-        </Router>
+      </Router>
+      <Header/>
+      <HomePage/>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,71 @@
+.line {
+    width: 100%;
+    height: 75vh;
+    background-image: url(../../assets/Img/line_1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.content {
+    display: flex;
+    height: 85%;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 30px;
+    box-sizing: border-box;
+
+    .column {
+        flex-basis:  50%;
+        margin-top: 55px;
+
+        .baby {
+            font-size:  110px;
+            color: palevioletred;
+        }
+
+        .ad {
+            font-size: 50px;
+            line-height: 45px;
+        }
+
+        .shop_now {
+            width: 150px;
+            color: black;
+            font-size: 20px;
+            padding: 12px 0px;
+            margin-top: 30px;
+            background-color: aquamarine;
+            border: 1px solid wheat;
+            border-radius: 20px;
+
+            &:hover{
+               background-color: rgb(194, 112, 125);
+            }
+        }
+    }
+}
+
+.card {
+    width: 190px;
+    height: 190px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 15px 15px;
+    background-position: center;
+    background-size: cover;
+    margin-left: 60px;
+}
+.milk {
+    background-image: url(../../assets/Img/sale_milk.png);
+}
+.food {
+    background-image: url(../../assets/Img/sale_food.png);
+}
+.fashion {
+    background-image: url(../../assets/Img/sale_do.png);
+}
+.ld {
+    background-image: url(../../assets/Img/sale_omo.png);
+}

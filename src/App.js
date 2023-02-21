@@ -7,6 +7,14 @@ import Customerbtn from './components/Content/Customer/Customerbtn/Customerbtn';
 import Header from './components/User/Header';
 import HomePage from './pages/HomePage';
 import Footer from './components/User/Footer';
+import ProductAdmin from './components/Content/ProductAdmin/ProductAdmin';
+import ProductAdd from './components/Content/ProductAdmin/ProducAdmin/ProductAdd';
+import Admin from './components/Content/Admin/Admin';
+import AdminAdd from './components/Content/Admin/AdminAdd/AdminAdd';
+import SellingAdmin from './components/Content/SellingAdmin/SellingAdmin';
+import SellingAdd from './components/Content/SellingAdmin/SellingAdmin/SellingAdd';
+import ProductEdit from './components/Content/ProductAdmin/ProductEdit/ProductEdit';
+
 function App() {
   return (
     <div >
@@ -16,12 +24,22 @@ function App() {
                     <Route index path='/' element={<Home/>}/>
                     <Route  path='/customer' element={<Customer/>}/>
                     <Route  path='/customer/add' element={<Customerbtn/>}/>
+
+                    <Route  path='/product' element={<ProductAdmin/>}/>
+                    <Route  path='/product/add' element={<ProductAdd/>}/>
+                    <Route  path='/product/:editID' element={<ProductEdit/>}/>
+
+                    <Route  path='/selling' element={<SellingAdmin/>}/>
+                    <Route  path='/selling/add' element={<SellingAdd/>}/>
+
+                    <Route  path='/admin' element={<Admin/>}/>
+                    <Route  path='/admin/add' element={<AdminAdd/>}/>
                 </Route>
             </Routes>
       </Router>
-      <Header/>
+      {/* <Header/>
       <HomePage/>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

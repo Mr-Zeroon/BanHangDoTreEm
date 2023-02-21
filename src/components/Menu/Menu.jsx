@@ -20,18 +20,18 @@ const Menu = () => {
                 <i className='bx bx-user-circle'></i>
                   <span className='link-name'>Customer </span>
                 </Link></li>
-                <li><a href="#">
+                <li><Link to="/product">
                 <i className='bx bxl-product-hunt' ></i>
                   <span className='link-name'>Product</span>
-                </a></li>
-                <li><a href="#">
+                </Link></li>
+                <li><Link to="/selling">
                 <i className='bx bx-cart-add'></i>
                   <span className='link-name'>Selling</span>
-                </a></li>
-                <li><a href="#">
+                </Link></li>
+                <li><Link to="/admin">
                 <i className='bx bxs-user-rectangle'></i>
                   <span className='link-name'>Admin</span>
-                </a></li>
+                </Link></li>
             </ul>
 
             <ul className='logout-mode'>

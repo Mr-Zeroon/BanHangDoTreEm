@@ -74,6 +74,39 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <div className='charts_table'>
+          <table className="table-fill">
+            <thead>
+              <tr>
+                <th className='text-left'>ID</th>
+                <th className='text-left'>Name</th>
+                <th className='text-left'>Pass</th>
+                <th className='text-left'>Address</th>
+                <th className='text-left'>Email</th>
+                <th className='text-left'>Phone Number</th>
+                <th className='text-left'>Action</th>
+              </tr>
+            </thead>
+            <tbody className="table-hover">
+              <tr>
+                <td className="text-left">001</td>
+                <td className="text-left">Maria Anders</td>
+                <td className="text-left">tahongduc01@</td>
+                <td className="text-left">Nghệ An</td>
+                <td className="text-left">tahongduc01@gmail.com</td>
+                <td className="text-left">0911799629</td>
+                <td className="text-left">
+                  <div className='customer-top__btntable'>
+                    <button>Edit</button>
+                    <button className='Delete'>Delete</button>
+                  </div>
+                </td>
+              </tr>
+              
+            </tbody>
+          
+          </table>
+        </div>
       </div>
   )
 }

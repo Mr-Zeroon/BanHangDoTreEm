@@ -1,0 +1,12 @@
+{
+    "users":[
+        {
+            "id":"123",
+            "name":"duc",
+            "pass":"123456",
+            "address":"Nghe An",
+            "email":"tahongduc01@gmail.com",
+            "phoneNumber":"0123456789"
+        }
+    ]
+}

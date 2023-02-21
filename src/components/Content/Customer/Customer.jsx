@@ -1,11 +1,22 @@
 import React from 'react'
 import {useNavigate } from 'react-router-dom'
+import { useSelector,useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import { removeUser } from '../../../redux/features/user/silceUser';
 const Customer = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleAdd = (event) =>{
     event.preventDefault();
     navigate('/customer/add')
   }
+  const products = useSelector(state => state.users.users)
+
+  const handleRemove = (id) =>{
+    dispatch(removeUser(id))
+    toast.success('Delete Complete!!')
+  }
+
   return (
     <div className='customer'>
       <div className='customer-top'>
@@ -13,14 +24,18 @@ const Customer = () => {
               <h1>Customer Management</h1>
           </div>
           <div className='customer-top__btn'>
-              <button onClick={handleAdd}>ADD</button>
+              <div className='customer-top__search'>
+                <input type="text" placeholder='Please enter into....'/>
+                <a href=""><i className='bx bx-search'></i></a>
+              </div>
+              <button  onClick={handleAdd}>ADD</button>
           </div>
       </div>
 
 
 
       <div className='customer-bottom'>
-          <table class="table-fill">
+          <table className="table-fill">
             <thead>
               <tr>
                 <th className='text-left'>ID</th>
@@ -33,20 +48,27 @@ const Customer = () => {
               </tr>
             </thead>
             <tbody className="table-hover">
-              <tr>
-                <td className="text-left">001</td>
-                <td className="text-left">Maria Anders</td>
-                <td className="text-left">tahongduc01@</td>
-                <td className="text-left">Nghệ An</td>
-                <td className="text-left">tahongduc01@gmail.com</td>
-                <td className="text-left">0911799629</td>
+              {
+                products.map((products,index)=>{
+                  return (
+              <tr key={products.id}>
+                <td className="text-left">{products.id}</td>
+                <td className="text-left">{products.customerName}</td>
+                <td className="text-left">{products.customerPass}</td>
+                <td className="text-left">{products.customerAddress}</td>
+                <td className="text-left">{products.customerEmail}</td>
+                <td className="text-left">{products.customerPhoneNumber}</td>
                 <td className="text-left">
                   <div className='customer-top__btntable'>
                     <button>Edit</button>
-                    <button>Delete</button>
+                    <button className='Delete' onClick={() => handleRemove(products.id)}>Delete</button>
                   </div>
                 </td>
               </tr>
+
+                  )
+                })
+              }
               
             </tbody>
             

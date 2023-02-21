@@ -133,7 +133,14 @@ body{
   color: var(--text-color);
   cursor: pointer;
 }
-.top img{
+.top-right{
+  display: flex;
+  align-items: center;
+}
+.top-right i{
+  margin-right: 20px;
+}
+.top-right img{
     width: 32px;
     height: 32px;
 }
@@ -265,6 +272,7 @@ body{
   height: 100%;
   display: flex;
   margin-top: 50px;
+  gap:20px
 }
 .charts_bottom--left{
   width: 30%;
@@ -272,6 +280,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  display: 5px 5px;
+  background-color:#E1EEDD ;
 }
 .charts_bottom--statistical{
   width: 400px;
@@ -286,6 +296,10 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px 10px;
+  background-color:#E1EEDD ;
+  border-radius: 10px;
+
 }
 .charts_bottom--statisticals{
   width: 600px;
@@ -295,13 +309,16 @@ body{
   border-radius: 10px;
   margin-left: 40px;
 }
+.charts_table{
+  margin-top: 50px;
+}
 .customer{
   width: 100%;
   height: 100%;
 }
 .customer-top{
   width: 100%;
-  height: 20%;
+  height: 30%;
   display: flex;
   flex-direction: column;
 }
@@ -311,15 +328,40 @@ body{
   text-align: center;
 }
 .customer-top__title h1{
+  font-size: 36px;
   font-family: 'RocknRoll One', sans-serif;
+  cursor: pointer;
+}
+.customer-top__title h1:hover{
+  color: red;
 }
 .customer-top__btn{
-  width: 76%;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: space-around;
   align-items: center;
   margin-top: 20px;
+}
+.customer-top__search {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+}
+.customer-top__search input{
+  border: #000;
+  width: 263px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+.customer-top__search i{
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 28px;
 }
 .customer-top__btn button{
   width: 130px;
@@ -365,29 +407,29 @@ body{
   animation: float 5s infinite;
 }
  
-th {
+.table-fill th{
   color:#D5DDE5;;
   background:#1b1e24;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
-  font-size:18px;
+  font-size:16px;
   font-weight: 500;
-  padding:24px;
-  text-align:left;
+  padding:15px;
+  text-align:center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   vertical-align:middle;
 }
 
-th:first-child {
+.table-fill th:first-child {
   border-top-left-radius:3px;
 }
  
-th:last-child {
+.table-fill th:last-child {
   border-top-right-radius:3px;
   border-right:none;
 }
   
-tr {
+.table-fill tr{
   border-top: 1px solid #C1C3D1;
   border-bottom: 1px solid #C1C3D1;
   color:#666B85;
@@ -396,37 +438,37 @@ tr {
   text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
  
-tr:hover td {
+.table-fill tr:hover td{
   background:#4E5066;
   color:#FFFFFF;
   border-top: 1px solid #22262e;
 }
  
-tr:first-child {
+.table-fill tr:first-child{
   border-top:none;
 }
 
-tr:last-child {
+.table-fill tr:last-child{
   border-bottom:none;
 }
  
-tr:nth-child(odd) td {
+.table-fill tr:nth-child(odd) td{
   background:#EBEBEB;
 }
  
-tr:nth-child(odd):hover td {
+.table-fill tr:nth-child(odd):hover td{
   background:#4E5066;
 }
 
-tr:last-child td:first-child {
+.table-fill tr:last-child td:first-child{
   border-bottom-left-radius:3px;
 }
  
-tr:last-child td:last-child {
+.table-fill tr:last-child td:last-child{
   border-bottom-right-radius:3px;
 }
  
-td {
+.table-fill td {
   background:#FFFFFF;
   padding:20px;
   text-align:left;
@@ -437,31 +479,31 @@ td {
   border-right: 1px solid #C1C3D1;
 }
 
-td:last-child {
+.table-fill td:last-child {
   border-right: 0px;
 }
 
-th.text-left {
+.table-fill th.text-left {
   text-align: left;
 }
 
-th.text-center {
+.table-fill th.text-center {
   text-align: center;
 }
 
-th.text-right {
+.table-fill th.text-right {
   text-align: right;
 }
 
-td.text-left {
+.table-fill td.text-left {
   text-align: left;
 }
 
-td.text-center {
+.table-fill td.text-center {
   text-align: center;
 }
 
-td.text-right {
+.table-fill td.text-right {
   text-align: right;
 }
 .customer-top__btntable{
@@ -469,26 +511,23 @@ td.text-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  flex-direction: column;
+  
 }
 .customer-top__btntable button{
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'RocknRoll One', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
-  background: rgb(6,14,131);
-  background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
-  border: none;
+ border: 2px solid white;
+ background-color: rgb(6,14,131);
+ color: white;
+ padding: 5px 10px;
+ font-size: 16px;
+ text-align: center;
+ font-weight: 500;
+ border-radius: 5px;
+}
+.Delete{
+  margin-top: 5px;
+}
+.customer-top__btntable button:hover{
+  background: rgb(0,3,255);
+  background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
 }

@@ -1,0 +1,33 @@
+.footer {
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.footer .link-share a:hover {
+    color: black;
+}
+/* credit */
+.credit {
+    background: black;
+    font-size: 20px;
+    color: aliceblue;
+    text-align: center;
+    height: 40px;
+}
+
+/* Speakend */
+.speakend {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-size: cover;
+
+    background-position: center;
+}
+.speakend .layout1 {
+    color: black;
+    font-weight: 100px;
+    font-size: 12px;
+}
+.speakend:hover {
+    filter: brightness(90%);
+}

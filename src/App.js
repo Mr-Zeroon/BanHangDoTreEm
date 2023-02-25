@@ -18,6 +18,10 @@ import ProductEdit from './components/Content/ProductAdmin/ProductEdit/ProductEd
 import AdminEdit from './components/Content/Admin/AdminEdit/AdminEdit';
 import SellingEdit from './components/Content/SellingAdmin/SellingEdit/SellingEdit';
 import CustomerEdit from './components/Content/Customer/CustomerEdit/CustomerEdit';
+import AdminLayout from './layouts/AdminLayout/AdminLayout'
+import Home from './components/Content/Home/Home';
+import Customer from './components/Content/Customer/Customer';
+import Customerbtn from './components/Content/Customer/Customerbtn/Customerbtn';
 
 function App() {
   return (

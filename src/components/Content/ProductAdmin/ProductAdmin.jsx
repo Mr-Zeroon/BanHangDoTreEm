@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { removeProduct } from '../../../redux/features/productSildeAdmin/productSilde';
+import { actDeleteProduct, actFetchAllProduct } from '../../../redux/features/productSildeAdmin/productSilceAPI';
+import Paginations from '../../Panigate/Panigate';
+
+
+
 const ProductAdmin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -10,17 +14,38 @@ const ProductAdmin = () => {
     event.preventDefault();
     navigate('/product/add')
   }
-  const products = useSelector(state=> state.product.product)
+  const {allProducts,isLoading} = useSelector(state=> state.product)
+
+  useEffect(()=>{
+    dispatch(actFetchAllProduct())
+  },[])
   
-  const handleEdit = (id) =>{
-    navigate(`/product/${id}`)
+  const renderDataProducts = (products)=>{
+      return products.map((product)=>(
+      <tr key={product.id}>
+        <td className="text-left">{product?.id}</td>
+        <td className="text-left">{product?.name}</td>
+        <td className="text-left">{product?.type}</td>
+        <td className="text-left">{product?.quantity}</td>
+        <td className="text-left">{product?.dateAdded}</td>
+        <td className="text-left">{product?.dateOfSale}</td>
+        <td className="text-left">
+          <div className='customer-top__btntable'>
+            <button onClick={()=>handleEdit(product.id)}>Edit</button>
+            <button onClick={()=>handleDeleteProduct(product?.id)} className='Delete'>Delete</button>
+          </div>
+        </td>
+      </tr>)
+      )
   }
 
-  const handleRemove = (id) =>{
-    dispatch(removeProduct(id))
-    toast.success('Delete Complete!!')
+  const handleDeleteProduct = (id)=>{
+    dispatch(actDeleteProduct(id))
+    toast.success('Delete successfully!')
   }
-  
+  const handleEdit = (id) =>{
+    navigate(`/product/${id}`)
+  }  
   return (
     <div className='customer'>
       <div className='customer-top'>
@@ -39,7 +64,9 @@ const ProductAdmin = () => {
 
 
       <div className='customer-bottom'>
-          <table className="table-fill">
+          {isLoading 
+          ? (<div>Loading .....</div>)
+          :<table className="table-fill">
             <thead>
               <tr>
                 <th className='text-left'>ID</th>
@@ -51,33 +78,16 @@ const ProductAdmin = () => {
                 <th className='text-left'>Action</th>
               </tr>
             </thead>
-            <tbody className="table-hover">
-            {
-                  products.map((products,index)=>{
-                    return (
-                      <tr key={products.id}>
-                        <td className="text-left">{products.id}</td>
-                        <td className="text-left">{products.name}</td>
-                        <td className="text-left">{products.type}</td>
-                        <td className="text-left">{products.quantity}</td>
-                        <td className="text-left">{products.dateAdded}</td>
-                        <td className="text-left">{products.dateOfSale}</td>
-                        <td className="text-left">
-                          <div className='customer-top__btntable'>
-                            <button onClick={() => handleEdit(products.id)}>Edit</button>
-                            <button className='Delete' onClick={() => handleRemove(products.id)}>Delete</button>
-                          </div>
-                        </td>
-                      </tr>
-                    )
-                  })
-                }
-            </tbody>
-            
+            <tbody className="table-hover">{renderDataProducts(allProducts)}</tbody>     
           </table>
+          }
+      </div>
+      <div className='pagination'>
+            <Paginations/>
       </div>
     </div>
   )
 }
+
 
 export default ProductAdmin

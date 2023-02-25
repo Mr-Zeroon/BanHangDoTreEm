@@ -60,8 +60,7 @@
     font-family: 'Arvo', serif;
     margin-top: 5px;
 }
-.Add-form__input input,
-.Add-form__input select{
+.Add-form__input input{
     border: 1px solid black;
     outline: none;
     border-radius: 5px;

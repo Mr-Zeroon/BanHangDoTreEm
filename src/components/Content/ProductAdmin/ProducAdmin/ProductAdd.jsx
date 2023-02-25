@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
-import { addProduct } from '../../../../redux/features/productSildeAdmin/productSilde';
 import './ProductAdd.css'
 import {toast} from 'react-toastify'
+import { actCreateProduct } from '../../../../redux/features/productSildeAdmin/productSilceAPI';
 const ProductAdd = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -11,14 +11,16 @@ const ProductAdd = () => {
     event.preventDefault();
     navigate('/product')
   }
-  const [product,setProduct] = useState({
+
+  const initialFormValue={
     id:Math.floor(Math.random()*2000),
     name:"",
-    type:"",
+    type:"Shirt",
     quantity:"",
     dateAdded:"",
     dateOfSale:"",
-  })
+  }
+  const [product,setProduct] = useState(initialFormValue)
   const handleChangeInputForm = (event)=>{
     const { name, value } = event.target;
     setProduct({
@@ -32,11 +34,12 @@ const ProductAdd = () => {
       toast.error('Please Enter Full Information!!')
     }
     else{
-      dispatch(addProduct(product))
+      dispatch(actCreateProduct(product))
+      setProduct(initialFormValue)
       navigate('/product')
       toast.success('Add to Success!')
     }
-   
+      
   };
   return (
     <div className='Add'>
@@ -59,7 +62,12 @@ const ProductAdd = () => {
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <input type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'/>
+              <select type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'>
+                  <option value=""></option>
+                  <option value="Shirt">Shirt</option>
+                  <option value="Trousers">Trousers</option>
+                  <option value="Shorts">Shorts</option>
+              </select>
             </div>
             <div className='Add-form__input'>
               <p>Quantity</p>

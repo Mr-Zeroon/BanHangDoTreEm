@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import './SellingAdd.css'
-import { useDispatch } from 'react-redux';
-import { addSelling } from '../../../../redux/features/selling/sellingSilde';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom'
 
-const SellingAdd = () => {
+import './SellingEdit.css'
+import {toast} from 'react-toastify'
+const SellingEdit = ({products}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleBack = (event) =>{
@@ -15,7 +14,7 @@ const SellingAdd = () => {
   const [selling,setSelling] = useState({
     id: Math.floor(Math.random()*2000),
     name:"",
-    type:"Shirt",
+    type:"",
     quantity:"",
     price:"",
     dateOfSale:"",
@@ -27,18 +26,9 @@ const SellingAdd = () => {
       [name]: value,
     });
   }
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
-    if( !selling.name || !selling.type || !selling.quantity || !selling.price || !selling.dateOfSale) {
-      toast.error('Please Enter Full Information!!')
-    }else {
-      dispatch(addSelling(selling))
-      navigate('/selling')
-      toast.success('Add to Success!')
-    }
+  
     
-
-  };
+ 
   return (
     <div className='Add'>
         <div className='Add-button__back'>
@@ -49,7 +39,7 @@ const SellingAdd = () => {
         </div>
         
         <div className='form-input'>
-          <form className='Add-form' onSubmit={handleSubmitForm} action="">
+          <form className='Add-form'  action="">
             {/* <div className='Add-form__input'>
               <p>ID</p>
               <input type="text" id="admin_id" name="id" value={selling.id} onChange={handleChangeInputForm} />
@@ -60,12 +50,7 @@ const SellingAdd = () => {
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <select  id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'>
-                  <option value=""></option>
-                  <option value="Shirt">Shirt</option>
-                  <option value="Trousers">Trousers</option>
-                  <option value="Shorts">Shorts</option>
-              </select>
+              <input type="text" id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'/>
             </div>
             <div className='Add-form__input'>
               <p>Quantity</p>
@@ -79,11 +64,11 @@ const SellingAdd = () => {
               <p>Date of Sale</p>
               <input type="date" id="admin_dateOfSale" name="dateOfSale" value={selling.dateOfSale} onChange={handleChangeInputForm}/>
             </div>
-            <button>ADD</button>
+            <button>Edit</button>
           </form>
         </div>
     </div>
   )
 }
 
-export default SellingAdd
+export default SellingEdit

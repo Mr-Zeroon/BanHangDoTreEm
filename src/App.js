@@ -14,6 +14,9 @@ import AdminAdd from './components/Content/Admin/AdminAdd/AdminAdd';
 import SellingAdmin from './components/Content/SellingAdmin/SellingAdmin';
 import SellingAdd from './components/Content/SellingAdmin/SellingAdmin/SellingAdd';
 import ProductEdit from './components/Content/ProductAdmin/ProductEdit/ProductEdit';
+import AdminEdit from './components/Content/Admin/AdminEdit/AdminEdit';
+import SellingEdit from './components/Content/SellingAdmin/SellingEdit/SellingEdit';
+import CustomerEdit from './components/Content/Customer/CustomerEdit/CustomerEdit';
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
                     <Route index path='/' element={<Home/>}/>
                     <Route  path='/customer' element={<Customer/>}/>
                     <Route  path='/customer/add' element={<Customerbtn/>}/>
+                    <Route  path='/customer/:editID' element={<CustomerEdit/>}/>
 
                     <Route  path='/product' element={<ProductAdmin/>}/>
                     <Route  path='/product/add' element={<ProductAdd/>}/>
@@ -31,9 +35,11 @@ function App() {
 
                     <Route  path='/selling' element={<SellingAdmin/>}/>
                     <Route  path='/selling/add' element={<SellingAdd/>}/>
+                    <Route  path='/selling/:editID' element={<SellingEdit/>}/>
 
                     <Route  path='/admin' element={<Admin/>}/>
                     <Route  path='/admin/add' element={<AdminAdd/>}/>
+                    <Route  path='/admin/:editID' element={<AdminEdit/>}/>
                 </Route>
             </Routes>
       </Router>

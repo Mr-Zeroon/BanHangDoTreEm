@@ -18,6 +18,7 @@ const FavoritePage = () => {
                     <GrFavorite className='favoritee'/>
                     <p>You haven't saved any favorites yet.</p>
                 </div>
+                <div className='No'></div>
             </div>
         </div>
     </div>

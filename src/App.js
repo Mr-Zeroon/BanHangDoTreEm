@@ -22,29 +22,33 @@ import AdminLayout from './layouts/AdminLayout/AdminLayout'
 import Home from './components/Content/Home/Home';
 import Customer from './components/Content/Customer/Customer';
 import Customerbtn from './components/Content/Customer/Customerbtn/Customerbtn';
-
+import HomeLayout from './layouts/UserLayout/HomeLayout/index'
 function App() {
   return (
     <div >
       <Router>
             <Routes>
-                <Route path='/' element={<AdminLayout/>}>
-                    <Route index path='/' element={<Home/>}/>
-                    <Route  path='/customer' element={<Customer/>}/>
-                    <Route  path='/customer/add' element={<Customerbtn/>}/>
-                    <Route  path='/customer/:editID' element={<CustomerEdit/>}/>
+                <Route path='/admin' element={<AdminLayout/>}>
+                    <Route index element={<Home/>}/>
+                    <Route  path='customer' element={<Customer/>}/>
+                    <Route  path='customer/add' element={<Customerbtn/>}/>
+                    <Route  path='customer/:editID' element={<CustomerEdit/>}/>
 
-                    <Route  path='/product' element={<ProductAdmin/>}/>
-                    <Route  path='/product/add' element={<ProductAdd/>}/>
-                    <Route  path='/product/:editID' element={<ProductEdit/>}/>
+                    <Route  path='product' element={<ProductAdmin/>}/>
+                    <Route  path='product/add' element={<ProductAdd/>}/>
+                    <Route  path='product/:editID' element={<ProductEdit/>}/>
 
-                    <Route  path='/selling' element={<SellingAdmin/>}/>
-                    <Route  path='/selling/add' element={<SellingAdd/>}/>
-                    <Route  path='/selling/:editID' element={<SellingEdit/>}/>
-
-                    <Route  path='/admin' element={<Admin/>}/>
-                    <Route  path='/admin/add' element={<AdminAdd/>}/>
-                    <Route  path='/admin/:editID' element={<AdminEdit/>}/>
+                    <Route  path='selling' element={<SellingAdmin/>}/>
+                    <Route  path='selling/add' element={<SellingAdd/>}/>
+                    <Route  path='selling/:editID' element={<SellingEdit/>}/>   
+                </Route>
+                    <Route path='/' element={<HomeLayout/>}>
+                    <Route  index element={<HomePage/>}/>
+                    <Route  path='/menu' element={<MenuPage/>}/>
+                    <Route  path='/about' element={<AboutPage/>}/>
+                    <Route  path='/service' element={<ServicePage/>}/>
+                    <Route  path='/favorite' element={<FavoritePage/>}/>
+                    <Route  path='/shopping' element={<ShoppingPage/>}/>
                 </Route>
             </Routes>
       </Router>

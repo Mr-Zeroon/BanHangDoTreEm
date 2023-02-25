@@ -12,23 +12,23 @@ const Menu = () => {
         </div>
         <div className="menu-items">
             <ul className="nav-links">
-                <li><Link to="/">
+                <li><Link to="/admin">
                   <i className='bx bx-home'></i>
                   <span className='link-name'>Dashboard</span>
                 </Link></li>
-                <li><Link to="/customer">
+                <li><Link to="/admin/customer">
                 <i className='bx bx-user-circle'></i>
                   <span className='link-name'>Customer </span>
                 </Link></li>
-                <li><Link to="/product">
+                <li><Link to="/admin/product">
                 <i className='bx bxl-product-hunt' ></i>
                   <span className='link-name'>Product</span>
                 </Link></li>
-                <li><Link to="/selling">
+                <li><Link to="/admin/selling">
                 <i className='bx bx-cart-add'></i>
                   <span className='link-name'>Selling</span>
                 </Link></li>
-                <li><Link to="/admin">
+                <li><Link to="/admin/admin">
                 <i className='bx bxs-user-rectangle'></i>
                   <span className='link-name'>Admin</span>
                 </Link></li>

@@ -9,7 +9,7 @@ const AdminLayout = () => {
         <Menu/>
         <div className='App-content'>
             <Header/>
-            <div className='outlet' style={{marginTop: 60}}>
+            <div className='outlet' style={{marginTop: 80}}>
                 <Outlet/>
             </div>
         </div>

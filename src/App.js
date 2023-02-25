@@ -1,11 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AdminLayout from './layouts/AdminLayout/AdminLayout'
-import Home from './components/Content/Home/Home';
-import Customer from './components/Content/Customer/Customer';
-import Customerbtn from './components/Content/Customer/Customerbtn/Customerbtn';
 import Header from './components/User/Header';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import MenuPage from './pages/MenuPage';
+import ServicePage from './pages/ServicePage';
+import FavoritePage from './pages/FavoritePage';
+import ShoppingPage from './pages/ShoppingPage';
 import Footer from './components/User/Footer';
 import ProductAdmin from './components/Content/ProductAdmin/ProductAdmin';
 import ProductAdd from './components/Content/ProductAdmin/ProducAdmin/ProductAdd';

@@ -33,7 +33,6 @@ const ProductEdit = () => {
   const [product,setProduct] = useState(initialFormValue)
 
   useEffect(()=>{
-    console.log(initialFormValue);
     setProduct(initialFormValue)
   }, [productLayTuRedux])
 

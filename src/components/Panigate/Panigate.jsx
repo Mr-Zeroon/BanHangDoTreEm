@@ -8,7 +8,7 @@ const Paginations = () =>  {
     setCurrent(page);
   };
   return (
-  <Pagination current={current} onChange={onChange} total={50} />
+  <Pagination current={current} pageSize={4} onChange={onChange} total={60} />
   )
 }
 export default Paginations;

@@ -58,7 +58,7 @@ export const actCreateProduct = (product)=> async (dispatch)=>{
     try {
         dispatch(actUpdateLoadingCreate(true));//Update status loading
         await fetchCreateProduct(product)
-        await dispatch(actFetchAllProduct)// call API get all product
+        await dispatch(actFetchAllProduct())// call API get all product
     } catch (error) {
         console.log(error);
     }finally{

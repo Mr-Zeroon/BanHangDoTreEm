@@ -1,42 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
-import { addProduct } from '../../../../redux/features/productSildeAdmin/productSilde';
 import './ProductEdit.css'
 import {toast} from 'react-toastify'
+import { fetchUpdateProductById } from '../../../../apis/productApi';
+import { actFetchProductById } from '../../../../redux/features/productSildeAdmin/productSilceAPI';
 const ProductEdit = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {editID} = useParams();
-
   
-
+  const productLayTuRedux = useSelector((state) => state.product.product)
 
   const handleBack = (event) =>{
     event.preventDefault();
     navigate('/product')
   }
-  const [product,setProduct] = useState({
-    id:editID,
-    name:"",
-    type:"",
-    quantity:"",
-    dateAdded:"",
-    dateOfSale:"",
-  })
+  useEffect(() => {
+    dispatch(actFetchProductById(editID))
+  },[])
+
+ 
+
+  const initialFormValue={
+    id:editID || "",
+    name:productLayTuRedux.name  || "",
+    type:productLayTuRedux.type  || "",
+    quantity:productLayTuRedux.quantity  || "",
+    dateAdded:productLayTuRedux.dateAdded  || "",
+    dateOfSale:productLayTuRedux.dateOfSale  || "",
+  }
+  const [product,setProduct] = useState(initialFormValue)
 
   useEffect(()=>{
-    setProduct(
-      {
-        id:editID,
-        name:"son",
-        type:"son",
-        quantity:"12",
-        dateAdded:"",
-        dateOfSale:"",
-      }
-    )
-  }, [])
+    console.log(initialFormValue);
+    setProduct(initialFormValue)
+  }, [productLayTuRedux])
 
   const handleChangeInputForm = (event)=>{
     const { name, value } = event.target;
@@ -45,6 +44,20 @@ const ProductEdit = () => {
       [name]: value,
     });
   }
+
+  const handleUpdateForm = async (event) => {
+    event.preventDefault();
+    if( !product.name || !product.type || !product.quantity || !product.dateAdded || !product.dateOfSale) {
+      toast.error('Please Enter Full Information!!')
+    }
+    else{
+      await fetchUpdateProductById(editID,product)
+      setProduct(initialFormValue)
+      navigate('/product')
+      toast.success('Update Success!') 
+    }
+      
+  };
  
   return (
     <div className='Add'>
@@ -56,7 +69,7 @@ const ProductEdit = () => {
         </div>
         
         <div className='form-input'>
-          <form className='Add-form'  action="">
+          <form className='Add-form' onSubmit={handleUpdateForm}  action="">
             {/* <div className='Add-form__input'>
               <p>ID</p>
               <input type="text" id="admin_id" name="id" value={product.id} onChange={handleChangeInputForm} />
@@ -67,7 +80,12 @@ const ProductEdit = () => {
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <input type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm}/>
+              <select type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'>
+                  <option value=""></option>
+                  <option value="Shirt">Shirt</option>
+                  <option value="Trousers">Trousers</option>
+                  <option value="Shorts">Shorts</option>
+              </select>
             </div>
             <div className='Add-form__input'>
               <p>Quantity</p>
@@ -81,7 +99,7 @@ const ProductEdit = () => {
               <p>Date of Sale</p>
               <input type="date" id="admin_dateOfSale" name="dateOfSale" value={product.dateOfSale} onChange={handleChangeInputForm}/>
             </div>
-            <button>Edit</button>
+            <button >Edit</button>
           </form>
         </div>
     </div>

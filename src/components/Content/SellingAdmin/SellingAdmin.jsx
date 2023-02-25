@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { removeSelling } from '../../../redux/features/selling/sellingSilde';
+import Paginations from '../../Panigate/Panigate';
 const SellingAdmin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
@@ -15,7 +16,9 @@ const SellingAdmin = () => {
     dispatch(removeSelling(id))
     toast.success('Delete Complete!!')
   }
-
+  const handleEdit = (id) =>{
+    navigate(`/selling/${id}`)
+  }
   
   return (
     <div className='customer'>
@@ -60,7 +63,7 @@ const SellingAdmin = () => {
                         <td className="text-left">{products.dateOfSale}</td>
                         <td className="text-left">
                           <div className='customer-top__btntable'>
-                            <button >Edit</button>
+                            <button onClick={() => handleEdit(products.id)} >Edit</button>
                             <button className='Delete' onClick={()=>handleRemove(products.id)}>Delete</button>
                           </div>
                         </td>
@@ -70,8 +73,10 @@ const SellingAdmin = () => {
                   })
                 }
             </tbody>
-            
           </table>
+      </div>
+      <div className='pagination'>
+            <Paginations/>
       </div>
     </div>
   )

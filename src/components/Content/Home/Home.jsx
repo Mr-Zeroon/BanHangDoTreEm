@@ -1,7 +1,7 @@
 import React from 'react'
 import PieChart from './Chart/PieChart'
 import ColumnChart from './Chart/ColumnChart' 
-
+import Paginations from '../../Panigate/Panigate';
 const Home = () => {
   return (
     <div className='charts'>
@@ -16,10 +16,6 @@ const Home = () => {
             </div>
 
             <div className='charts_top--card'>
-                <div className='charts_top--cardhollow'>
-                    <i className='bx bx-plus plus'></i>
-                </div>
-
                 <div className='charts_top--card1'>
                       <div className='charts_top--cardtop'>
                           <p>01</p>
@@ -27,10 +23,10 @@ const Home = () => {
                       </div>
                       <div className='charts_top--cardbottom'>
                         <div>
-                          <p>Marketing</p>
+                          <p>User</p>
                         </div>
                         <div>
-                          <label>124 MB</label>
+                          <label>99</label>
                         </div>
                       </div>
                 </div>
@@ -41,24 +37,42 @@ const Home = () => {
                       </div>
                       <div className='charts_top--cardbottom'>
                         <div>
-                          <p>Branding</p>
+                          <p>Admin</p>
                         </div>
                         <div>
-                          <label>124 MB</label>
+                          <label>5</label>
                         </div>
                       </div>
                 </div>
                 <div className='charts_top--card3'>
-                      <div className='charts_top--cardicon'>
-                        <i className='bx bxs-castle'></i>
+                      <div className='charts_top--cardtop'>
+                          <p>03</p>
+                          <i className='bx bx-dots-vertical-rounded'></i>
                       </div>
-                      <div className='charts_top--cardyour'>
+                      <div className='charts_top--cardbottom'>
                         <div>
-                          <p>Your </p>
-                          <span>Gallery</span>
+                          <p>Product</p>
+                        </div>
+                        <div>
+                          <label>100</label>
                         </div>
                       </div>
                 </div>
+                <div className='charts_top--card4'>
+                      <div className='charts_top--cardtop'>
+                          <p>04</p>
+                          <i className='bx bx-dots-vertical-rounded'></i>
+                      </div>
+                      <div className='charts_top--cardbottom'>
+                        <div>
+                          <p>Revenue</p>
+                        </div>
+                        <div>
+                          <label>2500000$</label>
+                        </div>
+                      </div>
+                </div>
+
 
             </div>
         </div>
@@ -78,27 +92,31 @@ const Home = () => {
           <table className="table-fill">
             <thead>
               <tr>
-                <th className='text-left'>ID</th>
-                <th className='text-left'>Name</th>
-                <th className='text-left'>Pass</th>
-                <th className='text-left'>Address</th>
-                <th className='text-left'>Email</th>
-                <th className='text-left'>Phone Number</th>
+                
+                <th className='text-left'>ID User</th>
+                <th className='text-left'>Product's Name</th>
+                <th className='text-left'>ID Products</th>
+                <th className='text-left'>Product's Name</th>
+                <th className='text-left'>Product Type</th>
+                <th className='text-left'>Quantity</th>
+                <th className='text-left'>Price</th>
+                <th className='text-left'>Status</th>
                 <th className='text-left'>Action</th>
               </tr>
             </thead>
             <tbody className="table-hover">
               <tr>
+                <td className="text-left">822</td>
+                <td className="text-left">Tạ Hồng Đức</td>
                 <td className="text-left">001</td>
-                <td className="text-left">Maria Anders</td>
-                <td className="text-left">tahongduc01@</td>
-                <td className="text-left">Nghệ An</td>
-                <td className="text-left">tahongduc01@gmail.com</td>
-                <td className="text-left">0911799629</td>
+                <td className="text-left">Áo cao cấp</td>
+                <td className="text-left">Shirt</td>
+                <td className="text-left">31</td>
+                <td className="text-left">300$</td>
+                <td className="text-left "><div className='status'>Đang chờ xác nhận</div></td>
                 <td className="text-left">
                   <div className='customer-top__btntable'>
-                    <button>Edit</button>
-                    <button className='Delete'>Delete</button>
+                    <button>Confirm</button>
                   </div>
                 </td>
               </tr>
@@ -107,6 +125,9 @@ const Home = () => {
           
           </table>
         </div>
+        <div className='pagination'>
+            <Paginations/>
+          </div>
       </div>
   )
 }

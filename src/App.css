@@ -128,6 +128,12 @@ body{
   border-bottom: 2px solid var(--border-color);
   z-index: 10;
 }
+.top h1{
+  font-family: 'Julee', cursive;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .top .sidebar-toggle{
   font-size: 26px;
   color: var(--text-color);
@@ -177,21 +183,7 @@ body{
   height: 100%;
   display: flex;
 }
-.charts_top--cardhollow{
-  width: 70px;
-  height: 100%;
-  border: dashed ;
-  border-radius: 10px;
-  margin-left: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.plus{
-  font-size: 25px;
-  font-weight: 400;
-  
-}
+
 
 .charts_top--card1{
   border: 1px solid #ADE792;
@@ -245,6 +237,14 @@ body{
   margin-left: 40px;
   background-color: #C27664;
 }
+.charts_top--card4{
+  border: 1px solid #F2921D;
+  width: 150px;
+  height: 100%;
+  border-radius: 20px;
+  margin-left: 40px;
+  background-color: #F2921D;
+}
 .charts_top--cardyour{
   margin-top: 20px ;
   display: flex;
@@ -282,6 +282,7 @@ body{
   align-items: center;
   display: 5px 5px;
   background-color:#E1EEDD ;
+  border-radius: 10px;
 }
 .charts_bottom--statistical{
   width: 400px;
@@ -391,7 +392,7 @@ body{
 
 .customer-bottom{
   width: 100%;
-  height: 100%;
+  height: 60%;
   margin-top: 40px;
 }
 .table-fill {
@@ -400,7 +401,6 @@ body{
   border-collapse: collapse;
   height: auto;
   margin: auto;
-  max-width: 600px;
   padding:5px;
   width: 100%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -484,7 +484,7 @@ body{
 }
 
 .table-fill th.text-left {
-  text-align: left;
+  text-align: center;
 }
 
 .table-fill th.text-center {
@@ -492,11 +492,11 @@ body{
 }
 
 .table-fill th.text-right {
-  text-align: right;
+  text-align: center;
 }
 
 .table-fill td.text-left {
-  text-align: left;
+  text-align: center;
 }
 
 .table-fill td.text-center {
@@ -504,8 +504,12 @@ body{
 }
 
 .table-fill td.text-right {
-  text-align: right;
+  text-align: center;
 }
+.status{
+  background-color: #F9F54B;
+}
+
 .customer-top__btntable{
   width: 130px;
   display: flex;
@@ -530,4 +534,16 @@ body{
 .customer-top__btntable button:hover{
   background: rgb(0,3,255);
   background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
+.pagination{
+  width: 100%;
+  height: 100px;
+  margin-top: 200px;
+  bottom: unset;
+}
+.ant-pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }

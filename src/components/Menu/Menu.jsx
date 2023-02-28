@@ -28,17 +28,14 @@ const Menu = () => {
                 <i className='bx bx-cart-add'></i>
                   <span className='link-name'>Selling</span>
                 </Link></li>
-                <li><Link to="/admin/admin">
-                <i className='bx bxs-user-rectangle'></i>
-                  <span className='link-name'>Admin</span>
-                </Link></li>
+                
             </ul>
 
             <ul className='logout-mode'>
-              <li><a href="#">
+              <li><Link to="/login-layout">
                 <i className='bx bx-log-out'></i>
                 <span className='link-name'>Logout</span>
-              </a></li>
+              </Link></li>
             </ul>
         </div>
     </nav>

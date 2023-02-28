@@ -14,7 +14,7 @@ const ProductEdit = () => {
 
   const handleBack = (event) =>{
     event.preventDefault();
-    navigate('/product')
+    navigate('/admin/product')
   }
   useEffect(() => {
     dispatch(actFetchProductById(editID))
@@ -52,7 +52,7 @@ const ProductEdit = () => {
     else{
       await fetchUpdateProductById(editID,product)
       setProduct(initialFormValue)
-      navigate('/product')
+      navigate('/admin/product')
       toast.success('Update Success!') 
     }
       

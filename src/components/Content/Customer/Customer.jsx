@@ -1,24 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useNavigate } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { removeUser } from '../../../redux/features/user/silceUser';
 import Paginations from '../../Panigate/Panigate';
+import { actDeleteUsers, actFetchAllUsers } from '../../../redux/features/user/usersSilceAPI';
 const Customer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleAdd = (event) =>{
     event.preventDefault();
-    navigate('/customer/add')
+    navigate('/admin/customer/add')
   }
-  const products = useSelector(state => state.users.users)
-
-  const handleRemove = (id) =>{
-    dispatch(removeUser(id))
-    toast.success('Delete Complete!!')
-  }
+  const {allUsers,isLoading} = useSelector(state => state.users)
+  useEffect(()=>{
+    dispatch(actFetchAllUsers())
+  },[])
+  const renderDataUsers = (users)=>{
+    return users.map((user)=>(
+      <tr key={user.id}>
+      <td className="text-left">{user.id}</td>
+      <td className="text-left">{user.customerName}</td>
+      <td className="text-left">{user.customerPass}</td>
+      <td className="text-left">{user.customerAddress}</td>
+      <td className="text-left">{user.customerSex}</td>
+      <td className="text-left">{user.customerEmail}</td>
+      <td className="text-left">{user.customerPhoneNumber}</td>
+      <td className="text-left">{user.customerIsAdmin}</td>                <td className="text-left">
+        <div className='customer-top__btntable'>
+          <button onClick={() => handleEdit(user.id)}>Edit</button>
+          <button className='Delete' onClick={() => handleDeleteUsers(user.id)}>Delete</button>
+        </div>
+      </td>
+    </tr>)
+    )
+}
+const handleDeleteUsers = (id)=>{
+  dispatch(actDeleteUsers(id))
+  toast.success('Delete successfully!')
+}
   const handleEdit = (id) =>{
-    navigate(`/customer/${id}`)
+    navigate(`/admin/customer/${id}`)
   }
   return (
     <div className='customer'>
@@ -38,44 +59,29 @@ const Customer = () => {
 
 
       <div className='customer-bottom'>
-          <table className="table-fill">
+      {isLoading 
+          ? (<div>Loading .....</div>)
+          :<table className="table-fill">
             <thead>
               <tr>
                 <th className='text-left'>ID</th>
                 <th className='text-left'>Name</th>
                 <th className='text-left'>Pass</th>
                 <th className='text-left'>Address</th>
+                <th className='text-left'>Sex</th>
                 <th className='text-left'>Email</th>
                 <th className='text-left'>Phone Number</th>
+                <th className='text-left'>isAdmin</th>
                 <th className='text-left'>Action</th>
               </tr>
             </thead>
             <tbody className="table-hover">
               {
-                products.map((products,index)=>{
-                  return (
-              <tr key={products.id}>
-                <td className="text-left">{products.id}</td>
-                <td className="text-left">{products.customerName}</td>
-                <td className="text-left">{products.customerPass}</td>
-                <td className="text-left">{products.customerAddress}</td>
-                <td className="text-left">{products.customerEmail}</td>
-                <td className="text-left">{products.customerPhoneNumber}</td>
-                <td className="text-left">
-                  <div className='customer-top__btntable'>
-                    <button onClick={() => handleEdit(products.id)}>Edit</button>
-                    <button className='Delete' onClick={() => handleRemove(products.id)}>Delete</button>
-                  </div>
-                </td>
-              </tr>
-
-                  )
-                })
+                renderDataUsers(allUsers)
               }
-              
             </tbody>
-            
           </table>
+      }
       </div>
       <div className='pagination'>
             <Paginations/>

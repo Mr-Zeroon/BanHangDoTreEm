@@ -1,21 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { actDeleteProduct, actFetchAllProduct } from '../../../redux/features/productSildeAdmin/productSilceAPI';
 import Paginations from '../../Panigate/Panigate';
 
-
-
 const ProductAdmin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleAdd = (event) =>{
     event.preventDefault();
-    navigate('/product/add')
+    navigate('/admin/product/add')
   }
   const {allProducts,isLoading} = useSelector(state=> state.product)
-
+  // console.log(allProducts,"all")
   useEffect(()=>{
     dispatch(actFetchAllProduct())
   },[])
@@ -44,8 +42,17 @@ const ProductAdmin = () => {
     toast.success('Delete successfully!')
   }
   const handleEdit = (id) =>{
-    navigate(`/product/${id}`)
+    navigate(`/admin/product/${id}`)
   }  
+
+
+  const [current, setCurrent] = useState(1);
+  const [potsPerPage, setPotsPerPage] = useState(4);
+  
+  const lastPostIndex = current * potsPerPage;
+  const firstPostIndex = lastPostIndex - potsPerPage;
+  const currentPosts = allProducts.slice(firstPostIndex,lastPostIndex)
+
   return (
     <div className='customer'>
       <div className='customer-top'>
@@ -78,12 +85,12 @@ const ProductAdmin = () => {
                 <th className='text-left'>Action</th>
               </tr>
             </thead>
-            <tbody className="table-hover">{renderDataProducts(allProducts)}</tbody>     
+            <tbody className="table-hover">{renderDataProducts(currentPosts)}</tbody>     
           </table>
           }
       </div>
-      <div className='pagination'>
-            <Paginations/>
+      <div className='pagination-page'>
+            <Paginations totalPosts={allProducts.length} setCurrent={setCurrent} current={current} potsPerPage={potsPerPage}/>
       </div>
     </div>
   )

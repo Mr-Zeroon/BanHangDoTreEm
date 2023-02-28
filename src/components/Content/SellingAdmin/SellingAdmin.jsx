@@ -1,23 +1,44 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import { removeSelling } from '../../../redux/features/selling/sellingSilde';
+import { actDeleteSelling, actFetchAllSelling } from '../../../redux/features/selling/sellingSilceAPI';
 import Paginations from '../../Panigate/Panigate';
 const SellingAdmin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
-  const products = useSelector(state=> state.selling.selling)
   const handleAdd = (event) =>{
     event.preventDefault();
-    navigate('/selling/add')
+    navigate('/admin/selling/add')
   }
-  const handleRemove = (id) =>{
-    dispatch(removeSelling(id))
-    toast.success('Delete Complete!!')
-  }
+  const {allSelling,isLoading} = useSelector(state=> state.selling)
+  useEffect(()=>{
+    dispatch(actFetchAllSelling())
+  },[])
+  const renderDataSelling = (products)=>{
+    return products.map((product)=>(
+      <tr key={product.id}>
+      <td className="text-left">{product.id}</td>
+      <td className="text-left">{product.name}</td>
+      <td className="text-left">{product.type}</td>
+      <td className="text-left">{product.quantity}</td>
+      <td className="text-left">{product.price}</td>
+      <td className="text-left">{product.dateOfSale}</td>
+      <td className="text-left">
+        <div className='customer-top__btntable'>
+          <button onClick={() => handleEdit(product.id)} >Edit</button>
+          <button className='Delete' onClick={()=>handleDeleteSelling(product.id)}>Delete</button>
+        </div>
+      </td>
+    </tr>)
+    )
+}
+const handleDeleteSelling = (id)=>{
+  dispatch(actDeleteSelling(id))
+  toast.success('Delete successfully!')
+}
   const handleEdit = (id) =>{
-    navigate(`/selling/${id}`)
+    navigate(`/admin/selling/${id}`)
   }
   
   return (
@@ -38,7 +59,9 @@ const SellingAdmin = () => {
 
 
       <div className='customer-bottom'>
-          <table className="table-fill">
+          {isLoading 
+          ? (<div>Loading .....</div>)
+          :<table className="table-fill">
             <thead>
               <tr>
                 <th className='text-left'>ID</th>
@@ -51,29 +74,9 @@ const SellingAdmin = () => {
               </tr>
             </thead>
             <tbody className="table-hover">
-            {
-                  products.map((products,index)=>{
-                    return (
-                      <tr key={products.id}>
-                        <td className="text-left">{products.id}</td>
-                        <td className="text-left">{products.name}</td>
-                        <td className="text-left">{products.type}</td>
-                        <td className="text-left">{products.quantity}</td>
-                        <td className="text-left">{products.price}</td>
-                        <td className="text-left">{products.dateOfSale}</td>
-                        <td className="text-left">
-                          <div className='customer-top__btntable'>
-                            <button onClick={() => handleEdit(products.id)} >Edit</button>
-                            <button className='Delete' onClick={()=>handleRemove(products.id)}>Delete</button>
-                          </div>
-                        </td>
-                      </tr>
-                
-                    )
-                  })
-                }
+            {renderDataSelling(allSelling)}
             </tbody>
-          </table>
+          </table>}
       </div>
       <div className='pagination'>
             <Paginations/>

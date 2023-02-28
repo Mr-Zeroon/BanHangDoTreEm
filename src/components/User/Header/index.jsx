@@ -34,7 +34,7 @@ const Header = () => {
               <div className='absolute top-full' id='subMenu'>
                 <div className='bg-white'>
                   <div className='border-0 bg-slate-300'>
-                    <Link to={'/profile'}>ProFile</Link>
+                    <Link to={'/profileUser'}>ProFile</Link>
                   </div>
                   <div>
                     <Link to={'/logout'}>Log Out</Link>

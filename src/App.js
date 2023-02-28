@@ -23,6 +23,9 @@ import Home from './components/Content/Home/Home';
 import Customer from './components/Content/Customer/Customer';
 import Customerbtn from './components/Content/Customer/Customerbtn/Customerbtn';
 import HomeLayout from './layouts/UserLayout/HomeLayout/index'
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginLayout from './layouts/UserLayout/LoginLayout';
 function App() {
   return (
     <div >
@@ -42,13 +45,18 @@ function App() {
                     <Route  path='selling/add' element={<SellingAdd/>}/>
                     <Route  path='selling/:editID' element={<SellingEdit/>}/>   
                 </Route>
-                    <Route path='/' element={<HomeLayout/>}>
+                <Route path='/' element={<HomeLayout/>}>
                     <Route  index element={<HomePage/>}/>
-                    <Route  path='/menu' element={<MenuPage/>}/>
-                    <Route  path='/about' element={<AboutPage/>}/>
-                    <Route  path='/service' element={<ServicePage/>}/>
-                    <Route  path='/favorite' element={<FavoritePage/>}/>
-                    <Route  path='/shopping' element={<ShoppingPage/>}/>
+                    <Route  path='menu' element={<MenuPage/>}/>
+                    <Route  path='about' element={<AboutPage/>}/>
+                    <Route  path='service' element={<ServicePage/>}/>
+                    <Route  path='favorite' element={<FavoritePage/>}/>
+                    <Route  path='shopping' element={<ShoppingPage/>}/>
+                </Route>
+                <Route path="/login-layout" element={<LoginLayout />}>
+                  <Route index element={<LoginPage />} />
+                  <Route path="login" element={<LoginPage />} />
+                  <Route path="register" element={<RegisterPage />} />
                 </Route>
             </Routes>
       </Router>

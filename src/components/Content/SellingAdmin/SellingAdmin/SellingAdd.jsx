@@ -2,24 +2,25 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './SellingAdd.css'
 import { useDispatch } from 'react-redux';
-import { addSelling } from '../../../../redux/features/selling/sellingSilde';
 import { toast } from 'react-toastify';
+import { actCreateSelling } from '../../../../redux/features/selling/sellingSilceAPI';
 
 const SellingAdd = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleBack = (event) =>{
     event.preventDefault();
-    navigate('/selling')
+    navigate('/admin/selling')
   }
-  const [selling,setSelling] = useState({
+  const initialFormValue={
     id: Math.floor(Math.random()*2000),
     name:"",
     type:"Shirt",
     quantity:"",
     price:"",
     dateOfSale:"",
-  })
+  }
+  const [selling,setSelling] = useState(initialFormValue)
   const handleChangeInputForm = (event)=>{
     const { name, value } = event.target;
     setSelling({
@@ -32,8 +33,9 @@ const SellingAdd = () => {
     if( !selling.name || !selling.type || !selling.quantity || !selling.price || !selling.dateOfSale) {
       toast.error('Please Enter Full Information!!')
     }else {
-      dispatch(addSelling(selling))
-      navigate('/selling')
+      dispatch(actCreateSelling(selling))
+      setSelling(initialFormValue)
+      navigate('/admin/selling')
       toast.success('Add to Success!')
     }
     

@@ -9,7 +9,7 @@ const ProductAdd = () => {
   const dispatch = useDispatch();
   const handleBack = (event) =>{
     event.preventDefault();
-    navigate('/product')
+    navigate('/admin/product')
   }
 
   const initialFormValue={
@@ -36,7 +36,7 @@ const ProductAdd = () => {
     else{
       dispatch(actCreateProduct(product))
       setProduct(initialFormValue)
-      navigate('/product')
+      navigate('/admin/product')
       toast.success('Add to Success!')
     }
       

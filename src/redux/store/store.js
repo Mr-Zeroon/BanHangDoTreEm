@@ -1,14 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit"
-import  usersReducer from "../features/user/silceUser";
-import adminsReducer from "../features/admin/sildeAdmin"
-import sellingReducer from "../features/selling/sellingSilde";
+import  usersReducer from "../features/user/usersSilceAPI";
+import adminsReducer from "../features/admin/sildeAdmin";
+import sellingReducer from "../features/selling/sellingSilceAPI";
 import productReducer from "../features/productSildeAdmin/productSilceAPI"
+import loginReducer from "../features/login/loginSlice";
 const store = configureStore({
     reducer:{
         users: usersReducer,
         admins: adminsReducer,
         selling: sellingReducer,
-        product: productReducer
+        product: productReducer,
+        login: loginReducer
     }
 })
 

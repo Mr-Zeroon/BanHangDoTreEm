@@ -1,40 +1,44 @@
-
-$primary: #007bff;
-$success: #28a745;
-$danger: #dc3545;
-$warning: #ffc107;
-
-.shadow {
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+// @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
+.container_profile {
+    margin-left: 100px;
 }
-
-.profile-tab-nav{
-	min-width:250px;
+.main_user{
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
 }
-.tab-content{
-	flex:1;
+.rounded-circle {
+	margin-left: 50px;
 }
-.form-group {
-    margin-bottom: 1.5rem;
+.sidebar{
+    background-color: #9b9696;
+    color: black;
+    height: 100%;
+    width: 300px;
 }
-
-.nav-pills{
-	a.nav-link{
-		padding:15px 20px;
-		border-bottom:1px solid #ddd;
-		border-radius:0;
-		color:#333;
-		i{
-			width:20px;
-		}
-	}
+.sidebar a{
+    margin-left: 10px;
+    display:block ;
+    color: black;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-decoration: none;
 }
-
-.img-circle {
-	img {
-		height: 100px;
-		width: 100px;
-		border-radius: 100%;
-		border: 5px solid #fff;
-	}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.content_profile{
+    background-color: whitesmoke;
+	width: 600px;
+	height: 400px;
+}
+.content_use {
+	background-color: whitesmoke;
+	width: 600px;
+	height: 200px;
+}
+.about_user {
+	margin-left: 50px;
 }

@@ -1,8 +1,10 @@
 import React from 'react'
 import "./home.scss"
-import { MdShoppingBasket } from 'react-icons/md'
+import { MdShoppingBasket, MdFavorite } from 'react-icons/md'
 import Star  from '../../assets/Img/star.png'
 import { Carousel } from 'antd';
+import {AiFillStar} from 'react-icons/ai'
+import slide_1 from '../../assets/Img/line_1.jpg'
 
 const contentStyle = {
     margin: 0,
@@ -28,10 +30,10 @@ const HomePage = ({flag}) => {
                     <button className='shop_now'>SHOP NOW</button>
                 </div>
                 <div className='column'>
-                    <div className='card milk'></div>
-                    <div className='card food'></div>
-                    <div className='card fashion'></div>
-                    <div className='card ld'></div>
+                    <div className='card_h milk'></div>
+                    <div className='card_h food'></div>
+                    <div className='card_h fashion'></div>
+                    <div className='card_h ld'></div>
                 </div>
             </div>
         </div>
@@ -44,135 +46,167 @@ const HomePage = ({flag}) => {
             <div id="featured-product">
             <div class="product-container">
                 <div class="product">
-                    <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                    <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                     <div class="product-desc">
                         <span>1111</span>
                         <h5>asdfghjljhgi</h5>
                         <div class="rate">
-                            <img className='img_product' src={Star} alt=""/>
-                            <img className='img_product' src={Star} alt=""/>
-                            <img className='img_product' src={Star} alt=""/>
-                            <img className='img_product' src={Star} alt=""/>
-                            <img className='img_product' src={Star} alt=""/>
+                            <AiFillStar className='text-amber-400'/>
+                            <AiFillStar className='text-amber-400'/>
+                            <AiFillStar className='text-amber-400'/>
+                            <AiFillStar className='text-amber-400'/>
+                            <AiFillStar className='text-amber-400'/>
                         </div>
                         <h4>$11</h4>
+                        <div className='flex justify-end'>
+                            <MdFavorite className='text-2xl mr-2'/>
+                            <MdShoppingBasket className='text-2xl mr-2'/>
+                        </div>
                     </div>
             </div>
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>bjfvgdfcf</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
             </div>
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>afgjdas</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
             </div>
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>sdafdfjc</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
             </div>
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>asdfxsjg</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
             </div>
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>safdhxfvjh</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
             </div>
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>dfasaSXGJD</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
             </div>
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>adfsgdh</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
             </div>
         </div>
         </div>
         </section>
 
-        <Carousel afterChange={onChange}>
+        <Carousel autoplay afterChange={onChange}>
             <div>
-                <h3 style={contentStyle}>1</h3>
+                <img className='w-full' src={slide_1}/>
             </div>
             <div>
-                <h3 style={contentStyle}>2</h3>
+                <img className='w-full' src='https://i.pinimg.com/736x/77/15/3c/77153cee77b3cba0c6b6ccd786ad50c0.jpg'/>
             </div>
             <div>
                 <h3 style={contentStyle}>3</h3>
@@ -191,123 +225,155 @@ const HomePage = ({flag}) => {
         <div id="featured-product">
         <div class="product-container">
             <div class="product">
-                <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+                <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
                 <div class="product-desc">
                     <span>1111</span>
                     <h5>asdfghjljhgi</h5>
                     <div class="rate">
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
-                        <img className='img_product' src={Star} alt=""/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
+                        <AiFillStar className='text-amber-400'/>
                     </div>
                     <h4>$11</h4>
+                    <div className='flex justify-end'>
+                        <MdFavorite className='text-2xl mr-2'/>
+                        <MdShoppingBasket className='text-2xl mr-2'/>
+                    </div>
                 </div>
         </div>
         <div class="product">
-            <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+            <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
             <div class="product-desc">
                 <span>1111</span>
                 <h5>bjfvgdfcf</h5>
                 <div class="rate">
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
                 </div>
                 <h4>$11</h4>
+                <div className='flex justify-end'>
+                    <MdFavorite className='text-2xl mr-2'/>
+                    <MdShoppingBasket className='text-2xl mr-2'/>
+                </div>
             </div>
         </div>
         <div class="product">
-            <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+            <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
             <div class="product-desc">
                 <span>1111</span>
                 <h5>dsghfasgv</h5>
                 <div class="rate">
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
                 </div>
                 <h4>$11</h4>
+                <div className='flex justify-end'>
+                    <MdFavorite className='text-2xl mr-2'/>
+                    <MdShoppingBasket className='text-2xl mr-2'/>
+                </div>
             </div>
         </div>
         <div class="product">
-            <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+            <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
             <div class="product-desc">
                 <span>1111</span>
                 <h5>sdafdfjc</h5>
                 <div class="rate">
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
                 </div>
                 <h4>$11</h4>
+                <div className='flex justify-end'>
+                    <MdFavorite className='text-2xl mr-2'/>
+                    <MdShoppingBasket className='text-2xl mr-2'/>
+                </div>
             </div>
         </div>
         <div class="product">
-            <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+            <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
             <div class="product-desc">
                 <span>1111</span>
                 <h5>asdfxsjg</h5>
                 <div class="rate">
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
                 </div>
                 <h4>$11</h4>
+                <div className='flex justify-end'>
+                    <MdFavorite className='text-2xl mr-2'/>
+                    <MdShoppingBasket className='text-2xl mr-2'/>
+                </div>
             </div>
         </div>
         <div class="product">
-            <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+            <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
             <div class="product-desc">
                 <span>1111</span>
                 <h5>safdhxfvjh</h5>
                 <div class="rate">
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
                 </div>
                 <h4>$11</h4>
+                <div className='flex justify-end'>
+                    <MdFavorite className='text-2xl mr-2'/>
+                    <MdShoppingBasket className='text-2xl mr-2'/>
+                </div>
             </div>
         </div>
         <div class="product">
-            <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+            <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
             <div class="product-desc">
                 <span>1111</span>
                 <h5>dfasaSXGJD</h5>
                 <div class="rate">
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
                 </div>
                 <h4>$11</h4>
+                <div className='flex justify-end'>
+                    <MdFavorite className='text-2xl mr-2'/>
+                    <MdShoppingBasket className='text-2xl mr-2'/>
+                </div>
             </div>
         </div>
         <div class="product">
-            <img className='w-40 -mt-8' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
+            <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
             <div class="product-desc">
                 <span>1111</span>
                 <h5>adfsgdh</h5>
                 <div class="rate">
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
-                    <img className='img_product' src={Star} alt=""/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
+                    <AiFillStar className='text-amber-400'/>
                 </div>
                 <h4>$11</h4>
+                <div className='flex justify-end'>
+                    <MdFavorite className='text-2xl mr-2'/>
+                    <MdShoppingBasket className='text-2xl mr-2'/>
+                </div>
             </div>
         </div>
     </div>

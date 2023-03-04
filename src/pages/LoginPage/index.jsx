@@ -4,9 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup'
 import { loginFormSchema } from '../../constants/formLoginSchema';
 import { useDispatch, useSelector } from 'react-redux'
-import { actReLogin, fetchLogin } from '../../redux/features/login/loginSlice';
+import { actReLogin, fetchLogin } from '../../redux/features/user/usersSilceAPI';
 import { useEffect } from 'react';
 import './login.scss'
+import { toast } from 'react-toastify';
 
 const initialFormValue = {
     username: '',
@@ -14,7 +15,11 @@ const initialFormValue = {
   }
 const LoginPage = () => {
     const navigate = useNavigate()
-  const { isLoading, isLogged, accessToken } = useSelector(state => state.login)
+  const { isLoading, isLogged, accessToken, users } = useSelector(state => state.users) 
+ 
+
+  console.log(accessToken,'asd');
+
   const methods = useForm({
     defaultValues: initialFormValue,
     resolver: yupResolver(loginFormSchema)
@@ -29,16 +34,19 @@ const LoginPage = () => {
   }, [])
 
   useEffect(() => {
-    if (isLogged) {
-      navigate('/')
-    }
-  }, [isLogged, navigate])
+      if (isLogged) {
+        navigate('/admin')
+        toast.success('Admin login successful')
+      }
+  }, [users,isLogged, navigate])
 
   const onValid = (values) => {
     const payload = {
       email: values.username,
-      password: values.password
+      password: values.password,
+      
     }
+    console.log("payload",values)
     dispatch(fetchLogin(payload))
   }
   return (
@@ -82,8 +90,9 @@ const LoginPage = () => {
                     <span></span>
                     <label>Password</label>
                 </div>
+
                 <div className="pass">Forgot Password?</div>
-                <input type="submit" value="Login"/>
+                <input type="submit" value="Login" disabled={isLoading}/>
                 <div className="signup_link">
                     Not a member? <Link to={'/login-layout/register'}>Signup</Link>
                 </div>

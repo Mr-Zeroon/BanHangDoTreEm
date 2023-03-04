@@ -13,13 +13,13 @@ const Customerbtn = () => {
   }
   const initialFormValue={
     id: Math.floor(Math.random()*2000),
-    customerName:"",
-    customerPass:"",
-    customerAddress:"",
-    customerSex:"Male",
-    customerEmail:"",
-    customerPhoneNumber:"",
-    customerIsAdmin:"False"
+    name:"",
+    password:"",
+    address:"",
+    sex:"Male",
+    email:"",
+    phoneNumber:"",
+    isAdmin:"False"
   }
   const [customerForm,setCustomerForm] = useState(initialFormValue)
 
@@ -33,10 +33,10 @@ const Customerbtn = () => {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    if(!customerForm.customerName || !customerForm.customerPass || !customerForm.customerEmail || !customerForm.customerAddress ) {
+    if(!customerForm.name || !customerForm.password || !customerForm.email || !customerForm.address ) {
       toast.error('Please Enter Full Information!!')
     }
-    else if(customerForm.customerPhoneNumber.length!==10) {
+    else if(customerForm.phoneNumber.length!==10) {
       toast.error('Please enter all 10 numbers!!')
     }
     else{
@@ -64,19 +64,19 @@ const Customerbtn = () => {
             </div> */}
             <div className='Add-form__input'>
               <p>Name</p>
-              <input type="text" id="customer_name" name="customerName" value={customerForm.customerName} onChange={handleChangeInputForm}  placeholder='Please click the userName!!!'/>
+              <input type="text" id="name" name="name" value={customerForm.name} onChange={handleChangeInputForm}  placeholder='Please click the userName!!!'/>
             </div>
             <div className='Add-form__input' >
-              <p>Pass</p>
-              <input type="text"  id="customer_pass" name="customerPass" value={customerForm.customerPass} onChange={handleChangeInputForm} placeholder='Please click the Pass!!!'/>
+              <p>Password</p>
+              <input type="text"  id="password" name="password" value={customerForm.password} onChange={handleChangeInputForm} placeholder='Please click the Password!!!'/>
             </div>
             <div className='Add-form__input'>
               <p>Address</p>
-              <input type="text" id="customer_address" name="customerAddress" value={customerForm.customerAddress} onChange={handleChangeInputForm} placeholder='Please click the Address! !!'/>
+              <input type="text" id="address" name="address" value={customerForm.address} onChange={handleChangeInputForm} placeholder='Please click the Address! !!'/>
             </div>
             <div className='Add-form__input'>
               <p>Sex</p>
-              <select  id="customer_sex" name="customerSex" value={customerForm.customerSex} onChange={handleChangeInputForm} placeholder='Please click the Address! !!'>
+              <select  id="sex" name="sex" value={customerForm.sex} onChange={handleChangeInputForm} placeholder='Please click the Address! !!'>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other Genders">Other Genders</option>
@@ -84,15 +84,15 @@ const Customerbtn = () => {
             </div>
             <div className='Add-form__input'>
               <p>Email</p>
-              <input type="text"  id="customer_email" name="customerEmail" value={customerForm.customerEmail} onChange={handleChangeInputForm} placeholder='Please click Email !!!'/>
+              <input type="text"  id="email" name="email" value={customerForm.email} onChange={handleChangeInputForm} placeholder='Please click Email !!!'/>
             </div>
             <div className='Add-form__input'>
               <p>Phone Number</p>
-              <input type="text" id="customer_phone_number" name="customerPhoneNumber" value={customerForm.customerPhoneNumber} onChange={handleChangeInputForm} placeholder='Please click Phone Number !!!'/>
+              <input type="text" id="phone_number" name="phoneNumber" value={customerForm.phoneNumber} onChange={handleChangeInputForm} placeholder='Please click Phone Number !!!'/>
             </div>
             <div className='Add-form__input'>
               <p>isAdmin</p>
-              <select  id="customer_isAdmin" name="customerIsAdmin" value={customerForm.customerIsAdmin} onChange={handleChangeInputForm} >
+              <select  id="isAdmin" name="isAdmin" value={customerForm.isAdmin} onChange={handleChangeInputForm} >
                 <option value="False">False</option>
                 <option value="True">True</option>
               </select>

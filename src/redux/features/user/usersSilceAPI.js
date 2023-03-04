@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { deleteUsersByID, fetchAllDataUsers, fetchCreateUsers, fetchDataUsersByID, fetchUpdateUsersById } from "../../../apis/usersApi";
-
+import axios from "axios";
+import { deleteUsersByID, fetchAllDataUsers, fetchCreateUsers, fetchDataUsersByID, fetchInfoMe, fetchUpdateUsersById } from "../../../apis/usersApi";
+import { BE_URL, KEY_ACCESS_TOKEN } from "../../../constants/config";
+import * as Jwt  from "jsonwebtoken";
 
 const initialState = {
     allUsers: [],
@@ -8,7 +10,9 @@ const initialState = {
     isLoading:false,
     isLoadingCreate:false,
     isLoadingDelete:false,
-    errors:{}
+    isLogged: localStorage.getItem('isLogged') || false,
+    errors:{},
+    accessToken: localStorage.getItem(KEY_ACCESS_TOKEN) || "",
 }
 
 export const actFetchAllUsers = createAsyncThunk(
@@ -23,11 +27,30 @@ export const actFetchUsersById = createAsyncThunk("users/actFetchUsersById", asy
     const users = await fetchDataUsersByID(id);
     return users || {}
 })
+export const fetchLogin = createAsyncThunk(
+    "users/fetchLogin",
+    async (payload) => {
+      const reps = await axios.post(`${BE_URL}login`, payload);
+      return reps.data;
 
+    }
+  );
 export const usersSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
+        actGetMe: (state, action) => {
+            state.users = action.payload;
+        },
+        loginSuccess:(state, action) =>{
+            state.isLogged = true;
+        },
+        actLogout:(state, action) =>{
+            localStorage.removeItem(KEY_ACCESS_TOKEN);
+            state.isLogged = false;
+            state.users={};
+            state.accessToken = "";
+        },
         actUpdateLoadingCreate: (state,action)=>{
             state.isLoadingCreate=action.payload;
         }
@@ -52,7 +75,31 @@ export const usersSlice = createSlice({
             state.isLoading = false;
             state.users = action.payload || {}
         })
-    }
+
+        builder.addCase(fetchLogin.pending, (state) => {
+            state.isLoading = true;
+          });
+
+        builder.addCase(fetchLogin.rejected, (state, action) => {
+            state.errors = {};
+            state.isLoading = false;
+          });
+
+        builder.addCase(fetchLogin.fulfilled, (state, action) => {
+            state.users = action.payload.users;
+            const { users, accessToken } = action.payload;
+            console.log(users,'adssssssssssssssss');
+            if (accessToken) {
+              state.users = users;
+              state.accessToken = accessToken;
+              localStorage.setItem('isLogged', JSON.parse(true))
+              state.isLogged = true;
+              localStorage.setItem(KEY_ACCESS_TOKEN, accessToken);
+            }
+            state.isLoading = false;
+          });
+    },
+    
 });
 export const actCreateUsers = (users)=> async (dispatch)=>{
   
@@ -88,6 +135,20 @@ export const actUpdateUsers = (id,payload)=> async (dispatch)=>{
         dispatch(actUpdateLoadingCreate(false));// Update status loading when call API success
     }
 }
-export const { actUpdateLoadingCreate } = usersSlice.actions;
+export const actReLogin = (accessToken) => async (dispatch) => {
+    try {
+      const decodeToken = Jwt.decode(accessToken);
+      if(decodeToken?.email){
+        const  repsInfo = await fetchInfoMe(decodeToken.email)
+        const infoUser = repsInfo?.data?.[0];
+        delete infoUser.password;
+        dispatch(actGetMe(infoUser))//Using middleware => dispatch lay thong tin user ki co data
+        dispatch(loginSuccess) // Middleware => Update status login success
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+export const { actUpdateLoadingCreate,actGetMe,loginSuccess,actLogout } = usersSlice.actions;
 
 export default usersSlice.reducer;

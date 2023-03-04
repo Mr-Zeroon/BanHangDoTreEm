@@ -6,10 +6,6 @@ const Paginations = ({totalPosts,potsPerPage,current,setCurrent}) =>{
   for(let i = 1;i<=Math.ceil(totalPosts/potsPerPage);i++){
     pages.push(i);
   }
-  console.log(totalPosts,"total");
-  console.log(potsPerPage,"postsperpage");
-  console.log(current,"current");
-  console.log(setCurrent,"setCurrent");
   return (
     <div className='pagination'>
       {

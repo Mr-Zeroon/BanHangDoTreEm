@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useNavigate } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -12,26 +12,31 @@ const Customer = () => {
     navigate('/admin/customer/add')
   }
   const {allUsers,isLoading} = useSelector(state => state.users)
+  
   useEffect(()=>{
     dispatch(actFetchAllUsers())
   },[])
+  
   const renderDataUsers = (users)=>{
-    return users.map((user)=>(
+    if(!users.length) return null
+
+    return users?.map((user)=>(
       <tr key={user.id}>
       <td className="text-left">{user.id}</td>
-      <td className="text-left">{user.customerName}</td>
-      <td className="text-left">{user.customerPass}</td>
-      <td className="text-left">{user.customerAddress}</td>
-      <td className="text-left">{user.customerSex}</td>
-      <td className="text-left">{user.customerEmail}</td>
-      <td className="text-left">{user.customerPhoneNumber}</td>
-      <td className="text-left">{user.customerIsAdmin}</td>                <td className="text-left">
+      <td className="text-left">{user.name}</td>
+      <td className="text-left">{user.address}</td>
+      <td className="text-left">{user.sex}</td>
+      <td className="text-left">{user.email}</td>
+      <td className="text-left">{user.phoneNumber}</td>
+      <td className="text-left">{user.isAdmin}</td>               
+      <td className="text-left">
         <div className='customer-top__btntable'>
           <button onClick={() => handleEdit(user.id)}>Edit</button>
           <button className='Delete' onClick={() => handleDeleteUsers(user.id)}>Delete</button>
         </div>
       </td>
     </tr>)
+    
     )
 }
 const handleDeleteUsers = (id)=>{
@@ -41,6 +46,12 @@ const handleDeleteUsers = (id)=>{
   const handleEdit = (id) =>{
     navigate(`/admin/customer/${id}`)
   }
+  const [current, setCurrent] = useState(1);
+  const [potsPerPage, setPotsPerPage] = useState(4);
+  
+  const lastPostIndex = current * potsPerPage;
+  const firstPostIndex = lastPostIndex - potsPerPage;
+  const currentPosts = allUsers.slice(firstPostIndex,lastPostIndex)
   return (
     <div className='customer'>
       <div className='customer-top'>
@@ -66,7 +77,6 @@ const handleDeleteUsers = (id)=>{
               <tr>
                 <th className='text-left'>ID</th>
                 <th className='text-left'>Name</th>
-                <th className='text-left'>Pass</th>
                 <th className='text-left'>Address</th>
                 <th className='text-left'>Sex</th>
                 <th className='text-left'>Email</th>
@@ -77,14 +87,14 @@ const handleDeleteUsers = (id)=>{
             </thead>
             <tbody className="table-hover">
               {
-                renderDataUsers(allUsers)
+                renderDataUsers(currentPosts)
               }
             </tbody>
           </table>
       }
       </div>
       <div className='pagination'>
-            <Paginations/>
+            <Paginations totalPosts={allUsers.length} setCurrent={setCurrent} current={current} potsPerPage={potsPerPage}/>
           </div>
     </div>
   )

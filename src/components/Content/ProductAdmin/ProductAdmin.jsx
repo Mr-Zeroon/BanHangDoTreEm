@@ -13,8 +13,9 @@ const ProductAdmin = () => {
     navigate('/admin/product/add')
   }
   const {allProducts,isLoading} = useSelector(state=> state.product)
-  // console.log(allProducts,"all")
+  console.log(allProducts,"all")
   useEffect(()=>{
+    
     dispatch(actFetchAllProduct())
   },[])
   
@@ -45,14 +46,12 @@ const ProductAdmin = () => {
     navigate(`/admin/product/${id}`)
   }  
 
-
   const [current, setCurrent] = useState(1);
   const [potsPerPage, setPotsPerPage] = useState(4);
-  
   const lastPostIndex = current * potsPerPage;
   const firstPostIndex = lastPostIndex - potsPerPage;
   const currentPosts = allProducts.slice(firstPostIndex,lastPostIndex)
-
+  
   return (
     <div className='customer'>
       <div className='customer-top'>

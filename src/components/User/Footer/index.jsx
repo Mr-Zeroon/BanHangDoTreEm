@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <div className='mt-3 bg-red-100 w-full'>
         <div className='footer_content'>       
-          <div className="speakend">
-            <div className="layout1">
+          <div className='speakend'>
+            <div className='layout1'>
                 <h3 className='font-bold text-xl'>Babyshop - for premium children's clothes</h3>
                 <p>05 Hoa An 12, Cam Le, Da Nang City</p>
                 <p>Hotline: 0988 66 12 01</p>

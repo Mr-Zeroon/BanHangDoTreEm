@@ -8,6 +8,7 @@ import store from './redux/store/store';
 import { ToastContainer } from 'react-toastify';
 import 'antd/dist/antd.css';
 import 'react-toastify/dist/ReactToastify.css';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

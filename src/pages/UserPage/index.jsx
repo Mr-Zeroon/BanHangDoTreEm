@@ -4,14 +4,14 @@ import avatar from "../../assets/Img/Huy.jpg"
 
 const UserPage = () => {
   return ( 
-    <div class="container_profile">
-        <div class="main_user">
-            <div class="row">
-                <div class="col-md-4 mt-1">
-                    <div class="card text-center sidebar">
-                        <div class="card-body">
-                            <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" className='rounded-circle' width="150"/>
-                            <div class="mt-3">
+    <div className="container_profile">
+        <div className="main_user">
+            <div className="row">
+                <div className="col-md-4 mt-1">
+                    <div className="card text-center sidebar">
+                        <div className="card-body">
+                            <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" classNameName='rounded-circle' width="150"/>
+                            <div className="mt-3">
                                 <h3>Huydanger</h3><br/>
                                 <a href="">Home</a>
                                 <a href="">Work</a>
@@ -23,55 +23,55 @@ const UserPage = () => {
                     </div>
                 </div>
             </div>
-            <div class="about_user col-md-8 mt-1">
-                <div class="card mb-3 content_profile">
-                    <h1 class="m-3 pt-3">About</h1>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
+            <div className="about_user col-md-8 mt-1">
+                <div className="card mb-3 content_profile">
+                    <h1 className="m-3 pt-3">About</h1>
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-md-3">
                                 <h5>Full Name</h5>
                             </div>
-                            <div class="col-md-9 text-secondary">
+                            <div className="col-md-9 text-secondary">
                                 Pham Gia Huy
                             </div>
                         </div>
                         <hr/>
-                        <div class="row">
-                            <div class="col-md-3">
+                        <div className="row">
+                            <div className="col-md-3">
                                 <h5>Email</h5>
                             </div>
-                            <div class="col-md-9 text-secondary">
+                            <div className="col-md-9 text-secondary">
                                 huydanger123@gmail.com
                             </div>
                         </div>
                         <hr/>
-                        <div class="row">
-                            <div class="col-md-3">
+                        <div className="row">
+                            <div className="col-md-3">
                                 <h5>Phone</h5>
                             </div>
-                            <div class="col-md-9 text-secondary">
+                            <div className="col-md-9 text-secondary">
                                 0988 661 ***
                             </div>
                         </div>
                         <hr/>
-                        <div class="row">
-                            <div class="col-md-3">
+                        <div className="row">
+                            <div className="col-md-3">
                                 <h5>Address</h5>
                             </div>
-                            <div class="col-md-9 text-secondary">
+                            <div className="col-md-9 text-secondary">
                                 Da Nang City
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card mb-3 content_use">
-                    <h1 class="m-3">Recent Projects</h1>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
+                <div className="card mb-3 content_use">
+                    <h1 className="m-3">Recent Projects</h1>
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-md-3">
                                 <h5>Project Name</h5>
                             </div>
-                            <div class="col-md-9 text-secondary">
+                            <div className="col-md-9 text-secondary">
                                 Project Description
                             </div>
                         </div>

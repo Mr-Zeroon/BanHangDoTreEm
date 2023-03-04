@@ -44,13 +44,13 @@ const HomePage = ({flag}) => {
                 </p>
             </div>
             <div id="featured-product">
-            <div class="product-container">
-                <div class="product">
+            <div className="product-container">
+                <div className="product">
                     <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                    <div class="product-desc">
+                    <div className="product-desc">
                         <span>1111</span>
                         <h5>asdfghjljhgi</h5>
-                        <div class="rate">
+                        <div className="rate">
                             <AiFillStar className='text-amber-400'/>
                             <AiFillStar className='text-amber-400'/>
                             <AiFillStar className='text-amber-400'/>
@@ -64,12 +64,12 @@ const HomePage = ({flag}) => {
                         </div>
                     </div>
             </div>
-            <div class="product">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>bjfvgdfcf</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -83,12 +83,12 @@ const HomePage = ({flag}) => {
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>afgjdas</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -102,12 +102,12 @@ const HomePage = ({flag}) => {
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>sdafdfjc</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -121,12 +121,12 @@ const HomePage = ({flag}) => {
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>asdfxsjg</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -140,12 +140,12 @@ const HomePage = ({flag}) => {
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>safdhxfvjh</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -159,12 +159,12 @@ const HomePage = ({flag}) => {
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>dfasaSXGJD</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -178,12 +178,12 @@ const HomePage = ({flag}) => {
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>adfsgdh</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -223,13 +223,13 @@ const HomePage = ({flag}) => {
             </p>
         </div>
         <div id="featured-product">
-        <div class="product-container">
-            <div class="product">
+        <div className="product-container">
+            <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                <div class="product-desc">
+                <div className="product-desc">
                     <span>1111</span>
                     <h5>asdfghjljhgi</h5>
-                    <div class="rate">
+                    <div className="rate">
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
                         <AiFillStar className='text-amber-400'/>
@@ -243,12 +243,12 @@ const HomePage = ({flag}) => {
                     </div>
                 </div>
         </div>
-        <div class="product">
+        <div className="product">
             <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-            <div class="product-desc">
+            <div className="product-desc">
                 <span>1111</span>
                 <h5>bjfvgdfcf</h5>
-                <div class="rate">
+                <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
@@ -262,12 +262,12 @@ const HomePage = ({flag}) => {
                 </div>
             </div>
         </div>
-        <div class="product">
+        <div className="product">
             <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-            <div class="product-desc">
+            <div className="product-desc">
                 <span>1111</span>
                 <h5>dsghfasgv</h5>
-                <div class="rate">
+                <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
@@ -281,12 +281,12 @@ const HomePage = ({flag}) => {
                 </div>
             </div>
         </div>
-        <div class="product">
+        <div className="product">
             <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-            <div class="product-desc">
+            <div className="product-desc">
                 <span>1111</span>
                 <h5>sdafdfjc</h5>
-                <div class="rate">
+                <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
@@ -300,12 +300,12 @@ const HomePage = ({flag}) => {
                 </div>
             </div>
         </div>
-        <div class="product">
+        <div className="product">
             <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-            <div class="product-desc">
+            <div className="product-desc">
                 <span>1111</span>
                 <h5>asdfxsjg</h5>
-                <div class="rate">
+                <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
@@ -319,12 +319,12 @@ const HomePage = ({flag}) => {
                 </div>
             </div>
         </div>
-        <div class="product">
+        <div className="product">
             <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-            <div class="product-desc">
+            <div className="product-desc">
                 <span>1111</span>
                 <h5>safdhxfvjh</h5>
-                <div class="rate">
+                <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
@@ -338,12 +338,12 @@ const HomePage = ({flag}) => {
                 </div>
             </div>
         </div>
-        <div class="product">
+        <div className="product">
             <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-            <div class="product-desc">
+            <div className="product-desc">
                 <span>1111</span>
                 <h5>dfasaSXGJD</h5>
-                <div class="rate">
+                <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
@@ -357,12 +357,12 @@ const HomePage = ({flag}) => {
                 </div>
             </div>
         </div>
-        <div class="product">
+        <div className="product">
             <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-            <div class="product-desc">
+            <div className="product-desc">
                 <span>1111</span>
                 <h5>adfsgdh</h5>
-                <div class="rate">
+                <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>

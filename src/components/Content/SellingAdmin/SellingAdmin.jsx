@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
@@ -40,7 +40,11 @@ const handleDeleteSelling = (id)=>{
   const handleEdit = (id) =>{
     navigate(`/admin/selling/${id}`)
   }
-  
+  const [current, setCurrent] = useState(1);
+  const [potsPerPage, setPotsPerPage] = useState(4);
+  const lastPostIndex = current * potsPerPage;
+  const firstPostIndex = lastPostIndex - potsPerPage;
+  const currentPosts = allSelling.slice(firstPostIndex,lastPostIndex)
   return (
     <div className='customer'>
       <div className='customer-top'>
@@ -74,12 +78,12 @@ const handleDeleteSelling = (id)=>{
               </tr>
             </thead>
             <tbody className="table-hover">
-            {renderDataSelling(allSelling)}
+            {renderDataSelling(currentPosts)}
             </tbody>
           </table>}
       </div>
       <div className='pagination'>
-            <Paginations/>
+            <Paginations totalPosts={allSelling.length} setCurrent={setCurrent} current={current} potsPerPage={potsPerPage}/>
       </div>
     </div>
   )

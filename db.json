@@ -1,34 +1,34 @@
 {
   "users": [
     {
-      "id": 504,
-      "customerName": "Ta Hong Duc",
-      "customerPass": "csa",
-      "customerAddress": "Truoc ngo",
-      "customerSex": "Male",
-      "customerEmail": "tahongduc01@gmail.com",
-      "customerPhoneNumber": "0911799629",
-      "customerIsAdmin": "True"
-    },
-    {
-      "id": 1501,
-      "customerName": "Ta Hong Duc",
-      "customerPass": "csa",
-      "customerAddress": "Truoc ngo",
-      "customerSex": "Male",
-      "customerEmail": "tahongduc01@gmail.com",
-      "customerPhoneNumber": "0911799629",
-      "customerIsAdmin": "False"
-    },
-    {
       "email": "tahongduc01@gmail.com",
-      "password": "$2a$10$rQjNWi4Qz.PWx4jdul8JueFYVtcMeQGdtas3LZjhXt3V75R5j0IX.",
-      "name": "Tạ Hồng Đức",
-      "address": "Nghệ An",
-      "sex": "male",
-      "isAdmin": true,
-      "phoneNumber": "0955651313",
-      "id": 1502
+      "password": "$2a$10$labOtlHUzALHy5/5yddeeeWSqWiIHXAoULu33vLAmFu/bAqJA7s3G",
+      "id": 182,
+      "name": "Ta Hong Duc",
+      "address": "Truoc ngo",
+      "sex": "Male",
+      "phoneNumber": "0911799629",
+      "isAdmin": "True"
+    },
+    {
+      "email": "tahongducasd1@gmail.com",
+      "password": "$2a$10$ArdLUCJjbJ9p6oYdbS7kN.HsWVtWh1Wwdg1/Rv9PrfXC1T15VMRCq",
+      "id": 243,
+      "name": "Ta Hong Duc",
+      "address": "Truoc ngo",
+      "sex": "Male",
+      "phoneNumber": "0911799629",
+      "isAdmin": "True"
+    },
+    {
+      "email": "tahongduc123321@gmail.com",
+      "password": "$2a$10$nYZH/X2QZPEIDjCU1W/2Q.soGPAzw2wMFOJr/3XGs3wQUu1LfiaF.",
+      "id": 93,
+      "name": "nha",
+      "address": "Truoc ngo",
+      "sex": "Male",
+      "phoneNumber": "0911799629",
+      "isAdmin": "False"
     }
   ],
   "customer": [

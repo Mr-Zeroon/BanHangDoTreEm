@@ -19,3 +19,7 @@ export const fetchCreateUsers = async(payload)=>{
 export const fetchUpdateUsersById = async(id,payload)=>{
     return await axios.put(`${BE_URL}users/${id}`,payload)
 }
+//Login
+export const fetchInfoMe = async(email)=>{
+    return await axios.get(`${BE_URL}users?email=${email}`)
+}

@@ -57,8 +57,12 @@ export const productsSlice = createSlice({
 export const actCreateProduct = (product)=> async (dispatch)=>{
   
     try {
+        const payload = {
+            ...product,
+            createAt: new Date().getTime()
+        }
         dispatch(actUpdateLoadingCreate(true));//Update status loading
-        await fetchCreateProduct(product)
+        await fetchCreateProduct(payload)
         await dispatch(actFetchAllProduct())// call API get all product
     } catch (error) {
         console.log(error);

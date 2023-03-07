@@ -16,9 +16,10 @@ const ProductAdd = () => {
     id:Math.floor(Math.random()*2000),
     name:"",
     type:"Shirt",
-    quantity:"",
-    dateAdded:"",
-    dateOfSale:"",
+    price:"",
+    description:"",
+    image:"",
+    rating:""
   }
   const [product,setProduct] = useState(initialFormValue)
   const handleChangeInputForm = (event)=>{
@@ -30,15 +31,11 @@ const ProductAdd = () => {
   }
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    if( !product.name || !product.type || !product.quantity || !product.dateAdded || !product.dateOfSale) {
-      toast.error('Please Enter Full Information!!')
-    }
-    else{
-      dispatch(actCreateProduct(product))
-      setProduct(initialFormValue)
-      navigate('/admin/product')
-      toast.success('Add to Success!')
-    }
+    dispatch(actCreateProduct(product))
+    setProduct(initialFormValue)
+    navigate('/admin/product')
+    toast.success('Add to Success!')
+    
       
   };
   return (
@@ -52,17 +49,13 @@ const ProductAdd = () => {
         
         <div className='form-input'>
           <form className='Add-form' onSubmit={handleSubmitForm} action="">
-            {/* <div className='Add-form__input'>
-              <p>ID</p>
-              <input type="text" id="admin_id" name="id" value={product.id} onChange={handleChangeInputForm} />
-            </div> */}
             <div className='Add-form__input' >
               <p>Product's name</p>
-              <input type="text" id="admin_name" name="name" value={product.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!'/>
+              <input type="text" id="admin_name" name="name" value={product.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <select type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'>
+              <select type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} >
                   <option value=""></option>
                   <option value="Shirt">Shirt</option>
                   <option value="Trousers">Trousers</option>
@@ -70,16 +63,20 @@ const ProductAdd = () => {
               </select>
             </div>
             <div className='Add-form__input'>
-              <p>Quantity</p>
-              <input type="number" id="admin_quantity" name="quantity" value={product.quantity} onChange={handleChangeInputForm} placeholder='Please click the Quantity!!!'/>
+              <p>Price</p>
+              <input type="number" id="admin_price" name="price" value={product.price} onChange={handleChangeInputForm} placeholder='Please click the Price!!!'required/>
             </div>
             <div className='Add-form__input'>
-              <p>Date Added</p>
-              <input type="date" id="admin_dateAdded" name="dateAdded" value={product.dateAdded} onChange={handleChangeInputForm} />
+              <p>Description</p>
+              <input type="text" id="admin_description" name="description" value={product.description} onChange={handleChangeInputForm} placeholder='Please click the Description!!!' required/>
             </div>
             <div className='Add-form__input'>
-              <p>Date of Sale</p>
-              <input type="date" id="admin_dateOfSale" name="dateOfSale" value={product.dateOfSale} onChange={handleChangeInputForm} />
+              <p>Image</p>
+              <input type="text" id="admin_image" name="image" value={product.image} onChange={handleChangeInputForm} placeholder='Please click the Image!!!' required/>
+            </div>
+            <div className='Add-form__input'>
+              <p>Rating</p>
+              <input type="text" id="admin_rating" name="rating" value={product.rating} onChange={handleChangeInputForm} placeholder='Please click the Rating!!!' required/>
             </div>
             <button>ADD</button>
           </form>

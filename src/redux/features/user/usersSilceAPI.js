@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { deleteUsersByID, fetchAllDataUsers, fetchCreateUsers, fetchDataUsersByID, fetchInfoMe, fetchUpdateUsersById } from "../../../apis/usersApi";
-import { BE_URL, KEY_ACCESS_TOKEN } from "../../../constants/config";
+import { BE_URL, KEY_ACCESS_TOKEN, KEY_IS_LOGGER } from "../../../constants/config";
 import * as Jwt  from "jsonwebtoken";
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
     isLoading:false,
     isLoadingCreate:false,
     isLoadingDelete:false,
-    isLogged: localStorage.getItem('isLogged') || false,
+    isLogged: JSON.parse(localStorage.getItem(KEY_IS_LOGGER)) || false,
     errors:{},
     accessToken: localStorage.getItem(KEY_ACCESS_TOKEN) || "",
 }
@@ -43,10 +43,12 @@ export const usersSlice = createSlice({
             state.users = action.payload;
         },
         loginSuccess:(state, action) =>{
+            localStorage.setItem(KEY_IS_LOGGER,JSON.stringify(true))
             state.isLogged = true;
         },
         actLogout:(state, action) =>{
             localStorage.removeItem(KEY_ACCESS_TOKEN);
+            localStorage.setItem(KEY_IS_LOGGER,JSON.stringify(false))
             state.isLogged = false;
             state.users={};
             state.accessToken = "";
@@ -88,11 +90,10 @@ export const usersSlice = createSlice({
         builder.addCase(fetchLogin.fulfilled, (state, action) => {
             state.users = action.payload.users;
             const { users, accessToken } = action.payload;
-            console.log(users,'adssssssssssssssss');
             if (accessToken) {
               state.users = users;
               state.accessToken = accessToken;
-              localStorage.setItem('isLogged', JSON.parse(true))
+              localStorage.setItem(KEY_IS_LOGGER,JSON.stringify(true))
               state.isLogged = true;
               localStorage.setItem(KEY_ACCESS_TOKEN, accessToken);
             }

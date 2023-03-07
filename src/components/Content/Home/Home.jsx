@@ -1,8 +1,45 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 import PieChart from './Chart/PieChart'
 import ColumnChart from './Chart/ColumnChart' 
 import Paginations from '../../Panigate/Panigate';
+import { useDispatch, useSelector } from 'react-redux';
+import { actFetchAllUsers } from '../../../redux/features/user/usersSilceAPI';
+import { actFetchAllProduct } from '../../../redux/features/productSildeAdmin/productSilceAPI';
 const Home = () => {
+  const dispatch = useDispatch();
+  const {allUsers} = useSelector(state => state.users)
+  
+  useEffect(()=>{
+    dispatch(actFetchAllUsers())
+  },[])
+  
+
+  const {allProducts} = useSelector(state=> state.product)
+  useEffect(()=>{
+    dispatch(actFetchAllProduct())
+  },[])
+  const product = allProducts.length
+
+  const handleCountUser = useMemo(() => {
+    return allUsers.reduce((a,b) => {
+      if(b.isAdmin === "True") {
+        return {
+          ...a,
+          admin: (a.admin || 0) + 1
+        }
+       
+      }
+      if(b.isAdmin === "False") {
+        return {
+          ...a,
+          user: (a.user || 0) + 1
+        }
+      }
+      return {...a}
+    }, {})
+  },[allUsers])
+  
+  
   return (
     <div className='charts'>
         <div className='charts_top'>
@@ -26,7 +63,7 @@ const Home = () => {
                           <p>User</p>
                         </div>
                         <div>
-                          <label>99</label>
+                          <label>{handleCountUser.user}</label>
                         </div>
                       </div>
                 </div>
@@ -40,7 +77,7 @@ const Home = () => {
                           <p>Admin</p>
                         </div>
                         <div>
-                          <label>5</label>
+                          <label>{handleCountUser.admin}</label>
                         </div>
                       </div>
                 </div>
@@ -54,7 +91,7 @@ const Home = () => {
                           <p>Product</p>
                         </div>
                         <div>
-                          <label>100</label>
+                          <label>{product}</label>
                         </div>
                       </div>
                 </div>
@@ -94,7 +131,7 @@ const Home = () => {
               <tr>
                 
                 <th className='text-left'>ID User</th>
-                <th className='text-left'>Product's Name</th>
+                <th className='text-left'>Name User</th>
                 <th className='text-left'>ID Products</th>
                 <th className='text-left'>Product's Name</th>
                 <th className='text-left'>Product Type</th>

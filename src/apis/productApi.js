@@ -1,7 +1,7 @@
 import axios from "axios"
 import {BE_URL} from "../constants/config"
 export const fetchAllDataProduct = async()=>{
-    const {data} = await axios.get(`${BE_URL}products`)
+    const {data} = await axios.get(`${BE_URL}products?_sort=createAt&_order=asc`)
     return data
 }
 export const fetchDataProductByID = async(id)=>{

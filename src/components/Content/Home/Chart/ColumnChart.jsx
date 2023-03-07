@@ -4,35 +4,51 @@ import { Column } from '@ant-design/plots';
 const ColumnChart = () => {
   const data = [
     {
-      type: 'House',
+      type: 'January',
       sales: 38,
     },
     {
-      type: 'Grains',
+      type: 'February',
       sales: 52,
     },
     {
-      type: 'Oils',
+      type: 'March',
       sales: 61,
     },
     {
-      type: 'Beauty care',
-      sales: 145,
+      type: 'April',
+      sales: 100,
     },
     {
-      type: 'Cosmetics',
+      type: 'May',
       sales: 48,
     },
     {
-      type: 'Foods',
+      type: 'June',
       sales: 38,
     },
     {
-      type: 'Drinks',
+      type: 'July',
+      sales: 20,
+    },
+    {
+      type: 'August',
       sales: 38,
     },
     {
-      type: 'Alcohol',
+      type: 'September',
+      sales: 48,
+    },
+    {
+      type: 'October',
+      sales: 58,
+    },
+    {
+      type: 'November',
+      sales: 38,
+    },
+    {
+      type: 'December',
       sales: 38,
     },
   ];

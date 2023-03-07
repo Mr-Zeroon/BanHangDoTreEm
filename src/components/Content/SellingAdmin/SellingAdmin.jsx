@@ -82,7 +82,7 @@ const handleDeleteSelling = (id)=>{
             </tbody>
           </table>}
       </div>
-      <div className='pagination'>
+      <div className='pagination-page'>
             <Paginations totalPosts={allSelling.length} setCurrent={setCurrent} current={current} potsPerPage={potsPerPage}/>
       </div>
     </div>

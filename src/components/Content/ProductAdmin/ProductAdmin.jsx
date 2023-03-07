@@ -13,9 +13,8 @@ const ProductAdmin = () => {
     navigate('/admin/product/add')
   }
   const {allProducts,isLoading} = useSelector(state=> state.product)
-  console.log(allProducts,"all")
+
   useEffect(()=>{
-    
     dispatch(actFetchAllProduct())
   },[])
   
@@ -25,9 +24,9 @@ const ProductAdmin = () => {
         <td className="text-left">{product?.id}</td>
         <td className="text-left">{product?.name}</td>
         <td className="text-left">{product?.type}</td>
-        <td className="text-left">{product?.quantity}</td>
-        <td className="text-left">{product?.dateAdded}</td>
-        <td className="text-left">{product?.dateOfSale}</td>
+        <td className="text-left">{product?.price}$</td>
+        <td className="text-left">{product?.description}</td>
+        <td className="text-left">{product?.rating}</td>
         <td className="text-left">
           <div className='customer-top__btntable'>
             <button onClick={()=>handleEdit(product.id)}>Edit</button>
@@ -78,9 +77,9 @@ const ProductAdmin = () => {
                 <th className='text-left'>ID</th>
                 <th className='text-left'>Product's name</th>
                 <th className='text-left'>Product Type</th>
-                <th className='text-left'>Quantity</th>
-                <th className='text-left'>Date Added</th>
-                <th className='text-left'>Date of Sale</th>
+                <th className='text-left'>Price</th>
+                <th className='text-left'>Description</th>
+                <th className='text-left'>Rating</th>
                 <th className='text-left'>Action</th>
               </tr>
             </thead>

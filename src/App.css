@@ -62,10 +62,10 @@ body{
   flex-direction: column;
   justify-content: space-between;
 }
-.menu-items li{
+.nav-links li{
   list-style: none;
 }
-.menu-items li a{
+.nav-links li a{
   display: flex;
   align-items: center;
   height: 50px;
@@ -91,7 +91,7 @@ body{
   align-items: center;
   color: var(--black-light-color);
 }
-.menu-items li a link-name{
+.menu-items li a .link-name{
   color: var(--black-light-color);
   font-size: 18px;
   font-weight: 400;
@@ -104,7 +104,51 @@ body{
   padding-top: 10px;
   border-top: 2px solid var(--border-color);
 }
-
+.logout-mode li{
+  list-style: none;
+}
+.logout-mode li a,
+.logout-mode li button{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  text-decoration: none;
+  position: relative;
+  border: none;
+}
+.logout-mode li a:hover:before,
+.logout-mode li button:hover:before{
+  content: "";
+  position: absolute;
+  left: -7px;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+.logout-mode li a i,
+.logout-mode li button i{
+  min-width: 45px;
+  height: 100%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--black-light-color);
+}
+.logout-mode li a .link-name,
+.logout-mode li button .link-name{
+  color: var(--black-light-color);
+  font-size: 18px;
+  font-weight: 400;
+}
+.logout-mode li a:hover i,
+.logout-mode li a:hover .link-name,
+.logout-mode li button:hover i,
+.logout-mode li button:hover .link-name{
+  color: var(--primary-color);
+}
 .App-content{
   position: relative;
   left: 250px;
@@ -511,7 +555,7 @@ body{
 }
 
 .customer-top__btntable{
-  width: 130px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

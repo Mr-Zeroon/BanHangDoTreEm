@@ -56,7 +56,7 @@ const handleDeleteUsers = (id)=>{
     <div className='customer'>
       <div className='customer-top'>
           <div className='customer-top__title'>
-              <h1>Customer Management</h1>
+              <h1>User Management</h1>
           </div>
           <div className='customer-top__btn'>
               <div className='customer-top__search'>
@@ -93,7 +93,7 @@ const handleDeleteUsers = (id)=>{
           </table>
       }
       </div>
-      <div className='pagination'>
+      <div className='pagination-page'>
             <Paginations totalPosts={allUsers.length} setCurrent={setCurrent} current={current} potsPerPage={potsPerPage}/>
           </div>
     </div>

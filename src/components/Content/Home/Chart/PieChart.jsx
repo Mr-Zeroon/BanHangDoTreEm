@@ -1,28 +1,51 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Pie, getCanvasPattern } from '@ant-design/plots';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { actFetchAllProduct } from '../../../../redux/features/productSildeAdmin/productSilceAPI'
 const PieChart = () => {
   
+  const dispatch = useDispatch();
+  const {allProducts} = useSelector(state=> state.product)
+  useEffect(()=>{
+    dispatch(actFetchAllProduct())
+  },[])
+
+  const handleCountProduct = useMemo(() => {
+    return allProducts.reduce((a,b) => {
+      if(b.type === "Shirt") {
+        return {
+          ...a,
+          shirt: (a.shirt || 0) + 1
+        }
+      }
+      if(b.type === "Trousers") {
+        return {
+          ...a,
+          trousers: (a.trousers || 0) + 1
+        }
+      }
+      if(b.type === "Shorts") {
+        return {
+          ...a,
+          short: (a.short || 0) + 1
+        }
+      }
+      return {...a}
+    }, {})
+  },[allProducts])
+
   const data = [
     {
-      type: 'House',
-      value: 27,
+      type: 'Shirt',
+      value: handleCountProduct.shirt,
     },
     {
-      type: 'Grains',
-      value: 25,
+      type: 'Trousers',
+      value: handleCountProduct.trousers,
     },
     {
-      type: 'Beauty care',
-      value: 18,
-    },
-    {
-      type: 'Cosmetics',
-      value: 15,
-    },
-    {
-      type: 'Type',
-      value: 5,
+      type: 'Short',
+      value: handleCountProduct.short,
     },
   ];
 

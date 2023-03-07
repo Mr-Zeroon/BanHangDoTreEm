@@ -107,7 +107,7 @@
 }
 
 #featured-product .product .product-desc {
-    text-align: center;
+    text-align: start;
     padding: 10px 0;
 }
 
@@ -135,11 +135,14 @@
 }
 
 #featured-product .product a {
-    color: #088178;
-    font-size: 22px;
+    margin-top: 30px;
+    color: #fff;
+    font-size: 15px;
     position: absolute;
     bottom: 20px;
     right: 10px;
+    background-color: #088178;
+    border-radius: 30px;
 }
 .rate {
     display: flex;

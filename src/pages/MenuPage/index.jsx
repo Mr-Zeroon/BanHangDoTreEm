@@ -7,27 +7,27 @@ const MenuPage = () => {
   return (
     <section className="w-full my-6">
       <div id="featured-product">
-        <div class="product-container">
-          <div class="product">
-            <div class="product-desc">
+        <div className="product-container">
+          <div className="product spring">
+            <div className="product-des">
               <span>1</span>
               <h5>spring dress</h5>                     
             </div>
           </div>
-          <div class="product">
-            <div class="product-desc">
+          <div className="product summer">
+            <div className="product-des">
               <span>2</span>
               <h5>summer outfit</h5>                     
             </div>
           </div>
-          <div class="product">
-            <div class="product-desc">
+          <div className="product autumn">
+            <div className="product-des">
               <span>3</span>
               <h5>autumn dress</h5>                     
             </div>
           </div>
-          <div class="product">
-            <div class="product-desc">
+          <div className="product winter">
+            <div className="product-des">
               <span>4</span>
               <h5>Winter outfit</h5>                     
             </div>
@@ -40,13 +40,13 @@ const MenuPage = () => {
         </p>
       </div>
       <div id="featured-product">
-            <div class="product-container">
-              <div class="product">
+            <div className="product-container">
+              <div className="product">
                 <img className='w-40 mt-2 ml-2' src='https://www.babyshop.com/images/1126926/card_large.jpg' alt=""/>
-                  <div class="product-desc">
+                  <div className="product-desc">
                   <span>1111</span>
                   <h5>asdfghjljhgi</h5>
-                  <div class="rate">
+                  <div className="rate">
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>
                     <AiFillStar className='text-amber-400'/>

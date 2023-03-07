@@ -4,10 +4,10 @@ import avatar from "../../assets/Img/Huy.jpg"
 
 const AboutPage = () => {
   return (
-    <section class="about">
-      <div class="main">
+    <section className="about">
+      <div className="main">
         <img src={avatar} alt="" srcset=""/>
-        <div class="about-text">
+        <div className="about-text">
           <h1>About Us</h1>
           <h5>Developer  <span className='span_about'> & Designer </span></h5>
           <p>Hello! My name is Huy Dep Trai

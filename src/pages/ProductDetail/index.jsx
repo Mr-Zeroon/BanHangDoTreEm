@@ -5,10 +5,10 @@ import Star  from '../../assets/Img/star.png'
 
 const ProductDetail = () => {
   return (
-    <div class="container_product">
+    <div className="container_product">
         <div>
             <div>
-                <img className='img_product' src={Clothes} alt="" class="image"/>
+                <img className='img_product' src={Clothes} alt=""/>
                 <div>
                     <button><img className='img_product' onclick="changeImg(this)" src={Clothes} alt=""/></button>
                     <button><img className='img_product' onclick="changeImg(this)" src={Clothes} alt=""/></button>
@@ -36,7 +36,7 @@ const ProductDetail = () => {
                     <img className='img_product' src="./Image/tote.png" alt=""/>
                     ADD TO FAVORITE
                 </button>
-                <button class="buy-now-btn"> BUY NOW</button>
+                <button className="buy-now-btn"> BUY NOW</button>
             </div>
         </div>
     </div>

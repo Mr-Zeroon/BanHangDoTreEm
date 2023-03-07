@@ -2,123 +2,64 @@
   "users": [
     {
       "email": "tahongduc01@gmail.com",
-      "password": "$2a$10$labOtlHUzALHy5/5yddeeeWSqWiIHXAoULu33vLAmFu/bAqJA7s3G",
-      "id": 182,
+      "password": "$2a$10$blnNgl6B6gWpnxqJUIivBOlteCvNFizzukHw2VPYUCJD.TfX1MSUi",
+      "id": 76,
       "name": "Ta Hong Duc",
-      "address": "Truoc ngo",
-      "sex": "Male",
-      "phoneNumber": "0911799629",
-      "isAdmin": "True"
-    },
-    {
-      "email": "tahongducasd1@gmail.com",
-      "password": "$2a$10$ArdLUCJjbJ9p6oYdbS7kN.HsWVtWh1Wwdg1/Rv9PrfXC1T15VMRCq",
-      "id": 243,
-      "name": "Ta Hong Duc",
-      "address": "Truoc ngo",
-      "sex": "Male",
-      "phoneNumber": "0911799629",
-      "isAdmin": "True"
-    },
-    {
-      "email": "tahongduc123321@gmail.com",
-      "password": "$2a$10$nYZH/X2QZPEIDjCU1W/2Q.soGPAzw2wMFOJr/3XGs3wQUu1LfiaF.",
-      "id": 93,
-      "name": "nha",
       "address": "Truoc ngo",
       "sex": "Male",
       "phoneNumber": "0911799629",
       "isAdmin": "False"
-    }
-  ],
-  "customer": [
-    {
-      "id": "146",
-      "name": "Nguyễn Văn C",
-      "pass": "123456",
-      "address": "Nghệ An",
-      "Email": "nguyenvanc@gmail.com",
-      "phoneNumber": "0123457789"
     },
     {
-      "id": "245",
-      "name": "Nguyễn Thị D",
-      "pass": "123456",
-      "address": "Nghệ An",
-      "Email": "nguyenthid@gmail.com",
-      "phoneNumber": "0955655313"
+      "email": "tahongduc0111@gmail.com",
+      "password": "$2a$10$vEB3hVj7paAO28gGAvy.I.FjfpevWiRgXzlfFYU2etO9Jn44M1wue",
+      "id": 1465,
+      "name": "Dai Ca Rong",
+      "address": "ncv",
+      "sex": "Male",
+      "phoneNumber": "0911799629",
+      "isAdmin": "True"
     },
     {
-      "email": "tahongduc01@gmail.com",
-      "password": "123456",
-      "name": "Tạ Hồng Đức",
+      "email": "tahongduc15@gmail.com",
+      "password": "$2a$10$buDU9Ej8I.1ZTQ3p7jCai.jkvOCSE8XUMBAC36TNW997syGIHw/xq",
+      "id": 1626,
+      "name": "BLS. Mario",
       "address": "Nghệ An",
-      "sex": "male",
-      "isAdmin": true,
-      "phoneNumber": "0955651313",
-      "id": "cO0TKPt"
-    },
-    {
-      "email": "tahongduc01@gmail.com",
-      "password": "123456",
-      "name": "Tạ Hồng Đức",
-      "address": "Nghệ An",
-      "sex": "male",
-      "isAdmin": true,
-      "phoneNumber": "0955651313",
-      "id": "RXQTeJj"
+      "sex": "Female",
+      "phoneNumber": "0123456789",
+      "isAdmin": "False"
     }
   ],
   "products": [
     {
-      "id": 851,
-      "name": "ads45y",
+      "id": 1740,
+      "name": "Áo sơ mi",
       "type": "Shirt",
-      "quantity": "213",
-      "dateAdded": "2023-03-01",
-      "dateOfSale": "2023-02-17"
+      "price": "22",
+      "description": "Hàng tốt",
+      "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
+      "rating": "4.5"
     },
     {
-      "id": 1079,
-      "name": "21",
-      "type": "Shirt",
-      "quantity": "18",
-      "dateAdded": "2023-03-02",
-      "dateOfSale": "2023-02-03"
+      "id": 514,
+      "name": "Quần dài",
+      "type": "Trousers",
+      "price": "15",
+      "description": "Hàng được xem trước",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZX7_lNKTbNUj5dTNnU1M_dWkbL7tWOaWzOg&usqp=CAU",
+      "rating": "4.5"
     },
     {
-      "id": 468,
-      "name": "Ta Hong Duc",
-      "type": "Shirt",
-      "quantity": "36",
-      "dateAdded": "2023-02-25",
-      "dateOfSale": "2023-03-01"
-    },
-    {
-      "id": 1609,
-      "name": "sadasd",
-      "type": "Shirt",
-      "quantity": "30",
-      "dateAdded": "2023-02-12",
-      "dateOfSale": "2023-03-04"
-    },
-    {
-      "id": 1990,
-      "name": "jggggggg",
-      "type": "Shirt",
-      "quantity": "878",
-      "dateAdded": "2023-02-22",
-      "dateOfSale": "2023-02-28"
+      "id": 1181,
+      "name": "Quần đùi",
+      "type": "Shorts",
+      "price": "2222",
+      "description": "Hàng tốt",
+      "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
+      "rating": "3.5",
+      "createAt": 1678158113550
     }
   ],
-  "selling": [
-    {
-      "id": 167,
-      "name": "Ta Hong Duc1",
-      "type": "Shirt",
-      "quantity": "66",
-      "price": "1",
-      "dateOfSale": "2023-02-05"
-    }
-  ]
+  "selling": []
 }

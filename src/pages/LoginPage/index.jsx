@@ -34,9 +34,9 @@ const LoginPage = () => {
   }, [])
 
   useEffect(() => {
-      if (isLogged) {
-        navigate('/admin')
-        toast.success('Admin login successful')
+       if(isLogged) {
+        navigate('/')
+        toast.success('Login in successfully')
       }
   }, [users,isLogged, navigate])
 

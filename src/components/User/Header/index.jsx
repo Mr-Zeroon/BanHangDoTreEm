@@ -1,13 +1,20 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../../assets/Logo/logo.png"
 import avatar from "../../../assets/Img/Huy.jpg"
 import "./Header.scss"
 import { MdShoppingBasket, MdFavorite } from "react-icons/md";
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import { actLogout } from '../../../redux/features/user/usersSilceAPI';
+import { Button } from 'antd';
 
 const Header = () => {
-
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const handleLogout = ()=>{
+    dispatch(actLogout())
+    navigate('/login-layout')  }
   return (
     <div className='container'>
         <div className='nav_head'>
@@ -37,7 +44,7 @@ const Header = () => {
                     <Link to={'/profileUser'}>ProFile</Link>
                   </div>
                   <div>
-                    <Link to={'/logout'}>Log Out</Link>
+                    <button onClick={handleLogout}>Logout</button>
                   </div>
                 </div>
               </div>

@@ -43,15 +43,11 @@ const SellingEdit = () => {
   }
   const handleUpdateForm = async (event) => {
     event.preventDefault();
-    if( !selling.name || !selling.type || !selling.quantity || !selling.price || !selling.dateOfSale) {
-      toast.error('Please Enter Full Information!!')
-    }
-    else{
-      await fetchUpdateSellingById(editID,selling)
-      setSelling(initialFormValue)
-      navigate('/admin/selling')
-      toast.success('Update Success!') 
-    }
+    await fetchUpdateSellingById(editID,selling)
+    setSelling(initialFormValue)
+    navigate('/admin/selling')
+    toast.success('Update Success!') 
+    
       
   };
     
@@ -67,25 +63,21 @@ const SellingEdit = () => {
         
         <div className='form-input'>
           <form className='Add-form' onSubmit={handleUpdateForm} action="">
-            {/* <div className='Add-form__input'>
-              <p>ID</p>
-              <input type="text" id="admin_id" name="id" value={selling.id} onChange={handleChangeInputForm} />
-            </div> */}
             <div className='Add-form__input' >
               <p>Product's name</p>
-              <input type="text" id="admin_name" name="name" value={selling.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!'/>
+              <input type="text" id="admin_name" name="name" value={selling.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <input type="text" id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'/>
+              <input type="text" id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} />
             </div>
             <div className='Add-form__input'>
               <p>Quantity</p>
-              <input type="number" id="admin_quantity" name="quantity" value={selling.quantity} onChange={handleChangeInputForm} placeholder='Please click the Quantity!!!'/>
+              <input type="number" id="admin_quantity" name="quantity" value={selling.quantity} onChange={handleChangeInputForm} placeholder='Please click the Quantity!!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Price</p>
-              <input type="number" id="admin_Price" name="price" value={selling.price} onChange={handleChangeInputForm} placeholder='Please click the Price!!!'/>
+              <input type="number" id="admin_Price" name="price" value={selling.price} onChange={handleChangeInputForm} placeholder='Please click the Price!!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Date of Sale</p>

@@ -1,8 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { actLogout } from '../../redux/features/user/usersSilceAPI'
 
 const Menu = () => {
-    
+    const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const handleLogout = ()=>{
+    dispatch(actLogout())
+    navigate('/login-layout')  }
   return (
     <nav className='nav'>
         <div className='logo-name'>
@@ -18,7 +24,7 @@ const Menu = () => {
                 </Link></li>
                 <li><Link to="/admin/customer">
                 <i className='bx bx-user-circle'></i>
-                  <span className='link-name'>Customer </span>
+                  <span className='link-name'>User</span>
                 </Link></li>
                 <li><Link to="/admin/product">
                 <i className='bx bxl-product-hunt' ></i>
@@ -32,10 +38,14 @@ const Menu = () => {
             </ul>
 
             <ul className='logout-mode'>
-              <li><Link to="/login-layout">
+              <li><Link to="/">
+                  <i className='bx bxs-user-detail'></i>
+                  <span className='link-name'>Switch to user</span>
+                </Link></li>
+              <li><button onClick={handleLogout}>
                 <i className='bx bx-log-out'></i>
                 <span className='link-name'>Logout</span>
-              </Link></li>
+              </button></li>
             </ul>
         </div>
     </nav>

@@ -10,12 +10,9 @@ import ShoppingPage from './pages/ShoppingPage';
 import Footer from './components/User/Footer';
 import ProductAdmin from './components/Content/ProductAdmin/ProductAdmin';
 import ProductAdd from './components/Content/ProductAdmin/ProducAdmin/ProductAdd';
-import Admin from './components/Content/Admin/Admin';
-import AdminAdd from './components/Content/Admin/AdminAdd/AdminAdd';
 import SellingAdmin from './components/Content/SellingAdmin/SellingAdmin';
 import SellingAdd from './components/Content/SellingAdmin/SellingAdmin/SellingAdd';
 import ProductEdit from './components/Content/ProductAdmin/ProductEdit/ProductEdit';
-import AdminEdit from './components/Content/Admin/AdminEdit/AdminEdit';
 import SellingEdit from './components/Content/SellingAdmin/SellingEdit/SellingEdit';
 import CustomerEdit from './components/Content/Customer/CustomerEdit/CustomerEdit';
 import AdminLayout from './layouts/AdminLayout/AdminLayout'

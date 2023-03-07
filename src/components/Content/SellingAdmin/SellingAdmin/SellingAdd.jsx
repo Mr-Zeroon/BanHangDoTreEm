@@ -30,16 +30,11 @@ const SellingAdd = () => {
   }
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    if( !selling.name || !selling.type || !selling.quantity || !selling.price || !selling.dateOfSale) {
-      toast.error('Please Enter Full Information!!')
-    }else {
+    
       dispatch(actCreateSelling(selling))
       setSelling(initialFormValue)
       navigate('/admin/selling')
       toast.success('Add to Success!')
-    }
-    
-
   };
   return (
     <div className='Add'>
@@ -52,17 +47,13 @@ const SellingAdd = () => {
         
         <div className='form-input'>
           <form className='Add-form' onSubmit={handleSubmitForm} action="">
-            {/* <div className='Add-form__input'>
-              <p>ID</p>
-              <input type="text" id="admin_id" name="id" value={selling.id} onChange={handleChangeInputForm} />
-            </div> */}
             <div className='Add-form__input' >
               <p>Product's name</p>
-              <input type="text" id="admin_name" name="name" value={selling.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!'/>
+              <input type="text" id="admin_name" name="name" value={selling.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <select  id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} placeholder='Please click the Product Type!!!'>
+              <select  id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} required>
                   <option value=""></option>
                   <option value="Shirt">Shirt</option>
                   <option value="Trousers">Trousers</option>
@@ -71,11 +62,11 @@ const SellingAdd = () => {
             </div>
             <div className='Add-form__input'>
               <p>Quantity</p>
-              <input type="number" id="admin_quantity" name="quantity" value={selling.quantity} onChange={handleChangeInputForm} placeholder='Please click the Quantity!!!'/>
+              <input type="number" id="admin_quantity" name="quantity" value={selling.quantity} onChange={handleChangeInputForm} placeholder='Please click the Quantity!!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Price</p>
-              <input type="number" id="admin_Price" name="price" value={selling.price} onChange={handleChangeInputForm} placeholder='Please click the Price!!!'/>
+              <input type="number" id="admin_Price" name="price" value={selling.price} onChange={handleChangeInputForm} placeholder='Please click the Price!!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Date of Sale</p>

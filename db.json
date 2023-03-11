@@ -39,6 +39,16 @@
       "sex": "Male",
       "phoneNumber": "0911799629",
       "isAdmin": "False"
+    },
+    {
+      "email": "tahongduc02@gmail.com",
+      "password": "$2a$10$5SlXYz.7USQgEmix8clajO4FxAq5XHm2Z9HKuw1/Qveb4gZBbcgJO",
+      "id": 1919,
+      "name": "Demo",
+      "address": "122",
+      "sex": "Male",
+      "phoneNumber": "0911799629",
+      "isAdmin": "False"
     }
   ],
   "products": [

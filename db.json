@@ -29,37 +29,40 @@
       "sex": "Female",
       "phoneNumber": "0123456789",
       "isAdmin": "False"
+    },
+    {
+      "email": "tahongduc0333331@gmail.com",
+      "password": "$2a$10$b0FPNQGdydJGcqZ/ZpCzHOPH51yLkVT/4/D/xgrmA2U.iJSAsy/cW",
+      "id": 692,
+      "name": "Ta Hong Duc",
+      "address": "Truoc ngo",
+      "sex": "Male",
+      "phoneNumber": "0911799629",
+      "isAdmin": "False"
     }
   ],
   "products": [
     {
-      "id": 1740,
-      "name": "Áo sơ mi",
-      "type": "Shirt",
-      "price": "22",
+      "id": 44,
+      "name": "Ta Hong Duc",
+      "type": "Spring",
+      "price": "1222",
       "description": "Hàng tốt",
       "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
-      "rating": "4.5"
-    },
-    {
-      "id": 514,
-      "name": "Quần dài",
-      "type": "Trousers",
-      "price": "15",
-      "description": "Hàng được xem trước",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZX7_lNKTbNUj5dTNnU1M_dWkbL7tWOaWzOg&usqp=CAU",
-      "rating": "4.5"
-    },
-    {
-      "id": 1181,
-      "name": "Quần đùi",
-      "type": "Shorts",
-      "price": "2222",
-      "description": "Hàng tốt",
-      "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
-      "rating": "3.5",
-      "createAt": 1678158113550
+      "rating": "4.5",
+      "createAt": 1678534312105
     }
   ],
-  "selling": []
+  "selling": [
+    {
+      "id": 1882,
+      "idUser": "46",
+      "nameUser": "Ta Hong Duc",
+      "idProduct": "46",
+      "nameProduct": "Ni",
+      "type": "Spring",
+      "quantity": "333",
+      "price": "2"
+    }
+  ]
 }

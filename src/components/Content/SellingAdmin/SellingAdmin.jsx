@@ -19,11 +19,14 @@ const SellingAdmin = () => {
     return products.map((product)=>(
       <tr key={product.id}>
       <td className="text-left">{product.id}</td>
-      <td className="text-left">{product.name}</td>
+      <td className="text-left">{product.idUser}</td>
+      <td className="text-left">{product.nameUser}</td>
+      <td className="text-left">{product.idProduct}</td>
+      <td className="text-left">{product.nameProduct}</td>
       <td className="text-left">{product.type}</td>
       <td className="text-left">{product.quantity}</td>
-      <td className="text-left">{product.price}</td>
-      <td className="text-left">{product.dateOfSale}</td>
+      <td className="text-left">{product.price}$</td>
+      <td className="text-left">{product.price * product.quantity}$</td>
       <td className="text-left">
         <div className='customer-top__btntable'>
           <button onClick={() => handleEdit(product.id)} >Edit</button>
@@ -68,12 +71,15 @@ const handleDeleteSelling = (id)=>{
           :<table className="table-fill">
             <thead>
               <tr>
-                <th className='text-left'>ID</th>
-                <th className='text-left'>Product's name</th>
+                <th className='text-left'>ID Selling</th>
+                <th className='text-left'>ID User</th>
+                <th className='text-left'>Name User</th>
+                <th className='text-left'>ID Products</th>
+                <th className='text-left'>Product's Name</th>
                 <th className='text-left'>Product Type</th>
                 <th className='text-left'>Quantity</th>
                 <th className='text-left'>Price</th>
-                <th className='text-left'>Date of Sale</th>
+                <th className='text-left'>Into Money</th>
                 <th className='text-left'>Action</th>
               </tr>
             </thead>

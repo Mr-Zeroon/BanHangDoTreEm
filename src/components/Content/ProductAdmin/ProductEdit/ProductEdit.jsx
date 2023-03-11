@@ -74,9 +74,10 @@ const ProductEdit = () => {
               <p>Product Type</p>
               <select type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} >
                   <option value=""></option>
-                  <option value="Shirt">Shirt</option>
-                  <option value="Trousers">Trousers</option>
-                  <option value="Shorts">Shorts</option>
+                  <option value="Spring">Spring</option>
+                  <option value="Autumn">Autumn</option>
+                  <option value="Summer">Summer</option>
+                  <option value="Winter">Winter</option>
               </select>
             </div>
             <div className='Add-form__input'>

@@ -7,3 +7,27 @@
 .No {
     margin-top: 50px;
 }
+.cart-page {
+    margin: 80px auto;
+    width: 100%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-page th{
+    padding: 5px;
+    color: #fff;
+    background: rgb(240, 112, 7);
+}
+.cart-page tr td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+}
+.total-price {
+    border-top: 3px solid rgb(240, 112, 7);
+    width: 100%;
+    max-width: 350px;
+}

@@ -48,7 +48,7 @@ function App() {
                   </Route>
                   <Route path='/' element={<HomeLayout/>}>
                       <Route  index element={<HomePage/>}/>
-                      <Route  path='/menu' element={<Products/>}/>
+                      <Route  path='/products' element={<Products/>}/>
                       <Route  path='/products/:id' element={<Product/>}/>
                       <Route  path='/about' element={<AboutPage/>}/>
                       <Route  path='/service' element={<ServicePage/>}/>

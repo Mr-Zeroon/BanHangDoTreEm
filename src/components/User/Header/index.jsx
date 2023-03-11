@@ -22,7 +22,7 @@ const Header = () => {
             <nav className='nav_list'>
                 <ul>
                     <li><Link to={'/'}>Home</Link></li>
-                    <li><Link to={'/menu'}>Menu</Link></li>
+                    <li><Link to={'/products'}>Products</Link></li>
                     <li><Link to={'/about'}>About Us</Link></li>
                     <li><Link to={'/service'}>Service</Link></li>
                 </ul>

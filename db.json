@@ -43,14 +43,31 @@
   ],
   "products": [
     {
-      "id": 44,
-      "name": "Ta Hong Duc",
-      "type": "Spring",
-      "price": "1222",
+      "id": 1740,
+      "name": "Áo sơ mi",
+      "type": "autumn",
+      "price": "22",
       "description": "Hàng tốt",
       "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
-      "rating": "4.5",
-      "createAt": 1678534312105
+      "rating": "4.5"
+    },
+    {
+      "id": 514,
+      "name": "Quần dài",
+      "type": "spring",
+      "price": "15",
+      "description": "Hàng được xem trước",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZX7_lNKTbNUj5dTNnU1M_dWkbL7tWOaWzOg&usqp=CAU",
+      "rating": "4.5"
+    },
+    {
+      "id": 1181,
+      "name": "Quần đùi",
+      "type": "winter",
+      "price": "2222",
+      "description": "Hàng tốt",
+      "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
+      "rating": "3.5"
     }
   ],
   "selling": [

@@ -6,49 +6,49 @@ import { MdShoppingBasket, MdFavorite } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../../redux/features/shopping/shoppingSliceAPI';
 
-// const Products = () => {
+const Products = () => {
 
-//     const [data, setData] = useState([]);
-//     const [filter, setFilter] = useState(data);
-//     const [loading, setLoading] = useState(false);
-//     let componentMounted = true;
+    const [data, setData] = useState([]);
+    const [filter, setFilter] = useState(data);
+    const [loading, setLoading] = useState(false);
+    let componentMounted = true;
 
 
-//     useEffect(() => {
-//         const getProducts = async() => {
-//             setLoading(true);
-//             const response = await fetch(`http://localhost:4000/products`);
-//             if(componentMounted){
-//                 setData(await response.clone().json());
-//                 setFilter(await response.json());
-//                 setLoading(false);
-//                 console.log(filter)
-//             }
-//             return () => {
-//                 componentMounted = false;
-//             }
-//         }
-//         getProducts();
-//     }, []);
+    useEffect(() => {
+        const getProducts = async() => {
+            setLoading(true);
+            const response = await fetch(`http://localhost:4000/products`);
+            if(componentMounted){
+                setData(await response.clone().json());
+                setFilter(await response.json());
+                setLoading(false);
+                console.log(filter)
+            }
+            return () => {
+                componentMounted = false;
+            }
+        }
+        getProducts();
+    }, []);
 
-//     const Loading = () => {
-//         return(
-//             <>
-//                 <div className='col-md-3'>
-//                     <Skeleton height={350}/>
-//                 </div>
-//                 <div className='col-md-3'>
-//                     <Skeleton height={350}/>
-//                 </div>
-//                 <div className='col-md-3'>
-//                     <Skeleton height={350}/>
-//                 </div>
-//                 <div className='col-md-3'>
-//                     <Skeleton height={350}/>
-//                 </div>
-//             </>
-//         )
-//     }
+    const Loading = () => {
+        return(
+            <>
+                <div className='col-md-3'>
+                    <Skeleton height={350}/>
+                </div>
+                <div className='col-md-3'>
+                    <Skeleton height={350}/>
+                </div>
+                <div className='col-md-3'>
+                    <Skeleton height={350}/>
+                </div>
+                <div className='col-md-3'>
+                    <Skeleton height={350}/>
+                </div>
+            </>
+        )
+    }
 
     const filterProduct = (cat) => {
         const updatedList = data.filter((x) => x.type === cat);
@@ -116,7 +116,7 @@ import { addToCart } from '../../../redux/features/shopping/shoppingSliceAPI';
                                     <h4>${product.price}</h4>
                                     <div className='flex justify-end'>
                                         <MdFavorite className='text-2xl mr-2'/>
-                                        <MdShoppingBasket onClick={ () => dispatch(addToCart(product))} className='text-2xl mr-2'/>
+                                        <MdShoppingBasket className='text-2xl mr-2'/>
                                     </div>
                                     </div>
                                 </div>

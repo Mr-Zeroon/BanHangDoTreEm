@@ -23,11 +23,14 @@ const SellingEdit = () => {
 
   const initialFormValue={
     id: editID||"",
-    name:sellingRequest.name||"",
-    type:sellingRequest.type||"Shirt",
+    idUser:sellingRequest.idUser||"",
+    nameUser:sellingRequest.nameUser||"",
+    idProduct:sellingRequest.idProduct||"",
+    nameProduct:sellingRequest.nameProduct||"",
+    type:sellingRequest.type||"",
     quantity:sellingRequest.quantity||"",
     price:sellingRequest.price||"",
-    dateOfSale:sellingRequest.dateOfSale||"",
+    
   }
   const [selling,setSelling] = useState(initialFormValue)
   useEffect(()=>{
@@ -63,13 +66,31 @@ const SellingEdit = () => {
         
         <div className='form-input'>
           <form className='Add-form' onSubmit={handleUpdateForm} action="">
+          <div className='Add-form__input' >
+              <p>ID User</p>
+              <input type="text" id="admin_name" name="idUser" value={selling.idUser} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+            </div>
             <div className='Add-form__input' >
-              <p>Product's name</p>
-              <input type="text" id="admin_name" name="name" value={selling.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+              <p>Name User</p>
+              <input type="text" id="admin_nameUser" name="nameUser" value={selling.nameUser} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+            </div>
+            <div className='Add-form__input' >
+              <p>ID Products</p>
+              <input type="text" id="admin_name" name="idProduct" value={selling.idProduct} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+            </div>
+            <div className='Add-form__input' >
+              <p>Product's Name</p>
+              <input type="text" id="admin_name" name="nameProduct" value={selling.nameProduct} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <input type="text" id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} />
+              <select  id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} required>
+                  <option value=""></option>
+                  <option value="Spring">Spring</option>
+                  <option value="Autumn">Autumn</option>
+                  <option value="Summer">Summer</option>
+                  <option value="Winter">Winter</option>
+              </select>
             </div>
             <div className='Add-form__input'>
               <p>Quantity</p>
@@ -78,10 +99,6 @@ const SellingEdit = () => {
             <div className='Add-form__input'>
               <p>Price</p>
               <input type="number" id="admin_Price" name="price" value={selling.price} onChange={handleChangeInputForm} placeholder='Please click the Price!!!' required/>
-            </div>
-            <div className='Add-form__input'>
-              <p>Date of Sale</p>
-              <input type="date" id="admin_dateOfSale" name="dateOfSale" value={selling.dateOfSale} onChange={handleChangeInputForm}/>
             </div>
             <button>Edit</button>
           </form>

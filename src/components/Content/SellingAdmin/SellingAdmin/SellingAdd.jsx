@@ -14,11 +14,13 @@ const SellingAdd = () => {
   }
   const initialFormValue={
     id: Math.floor(Math.random()*2000),
-    name:"",
-    type:"Shirt",
+    idUser:"",
+    nameUser:"",
+    idProduct:"",
+    nameProduct:"",
+    type:"Spring",
     quantity:"",
     price:"",
-    dateOfSale:"",
   }
   const [selling,setSelling] = useState(initialFormValue)
   const handleChangeInputForm = (event)=>{
@@ -48,16 +50,29 @@ const SellingAdd = () => {
         <div className='form-input'>
           <form className='Add-form' onSubmit={handleSubmitForm} action="">
             <div className='Add-form__input' >
-              <p>Product's name</p>
-              <input type="text" id="admin_name" name="name" value={selling.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+              <p>ID User</p>
+              <input type="text" id="admin_name" name="idUser" value={selling.idUser} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+            </div>
+            <div className='Add-form__input' >
+              <p>Name User</p>
+              <input type="text" id="admin_nameUser" name="nameUser" value={selling.nameUser} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+            </div>
+            <div className='Add-form__input' >
+              <p>ID Products</p>
+              <input type="text" id="admin_name" name="idProduct" value={selling.idProduct} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+            </div>
+            <div className='Add-form__input' >
+              <p>Product's Name</p>
+              <input type="text" id="admin_name" name="nameProduct" value={selling.nameProduct} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
               <select  id="admin_type" name="type" value={selling.type} onChange={handleChangeInputForm} required>
                   <option value=""></option>
-                  <option value="Shirt">Shirt</option>
-                  <option value="Trousers">Trousers</option>
-                  <option value="Shorts">Shorts</option>
+                  <option value="Spring">Spring</option>
+                  <option value="Autumn">Autumn</option>
+                  <option value="Summer">Summer</option>
+                  <option value="Winter">Winter</option>
               </select>
             </div>
             <div className='Add-form__input'>
@@ -67,10 +82,6 @@ const SellingAdd = () => {
             <div className='Add-form__input'>
               <p>Price</p>
               <input type="number" id="admin_Price" name="price" value={selling.price} onChange={handleChangeInputForm} placeholder='Please click the Price!!!' required/>
-            </div>
-            <div className='Add-form__input'>
-              <p>Date of Sale</p>
-              <input type="date" id="admin_dateOfSale" name="dateOfSale" value={selling.dateOfSale} onChange={handleChangeInputForm}/>
             </div>
             <button>ADD</button>
           </form>

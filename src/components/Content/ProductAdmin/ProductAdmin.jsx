@@ -8,6 +8,7 @@ import Paginations from '../../Panigate/Panigate';
 const ProductAdmin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [search,setSearch] = useState("")
   const handleAdd = (event) =>{
     event.preventDefault();
     navigate('/admin/product/add')
@@ -18,24 +19,6 @@ const ProductAdmin = () => {
     dispatch(actFetchAllProduct())
   },[])
   
-  const renderDataProducts = (products)=>{
-      return products.map((product)=>(
-      <tr key={product.id}>
-        <td className="text-left">{product?.id}</td>
-        <td className="text-left">{product?.name}</td>
-        <td className="text-left">{product?.type}</td>
-        <td className="text-left">{product?.price}$</td>
-        <td className="text-left">{product?.description}</td>
-        <td className="text-left">{product?.rating}</td>
-        <td className="text-left">
-          <div className='customer-top__btntable'>
-            <button onClick={()=>handleEdit(product.id)}>Edit</button>
-            <button onClick={()=>handleDeleteProduct(product?.id)} className='Delete'>Delete</button>
-          </div>
-        </td>
-      </tr>)
-      )
-  }
 
   const handleDeleteProduct = (id)=>{
     dispatch(actDeleteProduct(id))
@@ -49,8 +32,12 @@ const ProductAdmin = () => {
   const [potsPerPage, setPotsPerPage] = useState(4);
   const lastPostIndex = current * potsPerPage;
   const firstPostIndex = lastPostIndex - potsPerPage;
-  const currentPosts = allProducts.slice(firstPostIndex,lastPostIndex)
   
+  const handleFilterProduct = () => {
+    return allProducts.filter((product) => {
+      return product.name.toLowerCase().includes(search.toLowerCase()); 
+    }).slice(firstPostIndex, lastPostIndex);
+  }
   return (
     <div className='customer'>
       <div className='customer-top'>
@@ -59,7 +46,7 @@ const ProductAdmin = () => {
           </div>
           <div className='customer-top__btn'>
               <div className='customer-top__search'>
-                <input type="text" placeholder='Please enter into....'/>
+                <input type="text" placeholder='Please enter into....' onChange={(e)=>setSearch(e.target.value)}/>
                 <a href=""><i className='bx bx-search'></i></a>
               </div>
               <button  onClick={handleAdd}>ADD</button>
@@ -83,7 +70,25 @@ const ProductAdmin = () => {
                 <th className='text-left'>Action</th>
               </tr>
             </thead>
-            <tbody className="table-hover">{renderDataProducts(currentPosts)}</tbody>     
+            <tbody className="table-hover">{
+            handleFilterProduct().map((product)=>{
+              return(
+              <tr key={product.id}>
+                <td className="text-left">{product?.id}</td>
+                <td className="text-left">{product?.name}</td>
+                <td className="text-left">{product?.type}</td>
+                <td className="text-left">{product?.price}$</td>
+                <td className="text-left">{product?.description}</td>
+                <td className="text-left">{product?.rating}</td>
+                <td className="text-left">
+                  <div className='customer-top__btntable'>
+                    <button onClick={()=>handleEdit(product.id)}>Edit</button>
+                    <button onClick={()=>handleDeleteProduct(product?.id)} className='Delete'>Delete</button>
+                  </div>
+                </td>
+              </tr>)}
+            )}
+            </tbody>     
           </table>
           }
       </div>

@@ -2,7 +2,7 @@ import axios from "axios"
 import {BE_URL} from "../constants/config"
 
 export const fetchAllDataSelling = async()=>{
-    const {data} = await axios.get(`${BE_URL}selling`)
+    const {data} = await axios.get(`${BE_URL}selling?_sort=createAt&_order=asc`)
     return data
 }
 export const fetchDataSellingByID = async(id)=>{

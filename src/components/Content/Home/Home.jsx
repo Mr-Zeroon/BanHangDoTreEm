@@ -5,6 +5,7 @@ import Paginations from '../../Panigate/Panigate';
 import { useDispatch, useSelector } from 'react-redux';
 import { actFetchAllUsers } from '../../../redux/features/user/usersSilceAPI';
 import { actFetchAllProduct } from '../../../redux/features/productSildeAdmin/productSilceAPI';
+import { actFetchAllSelling } from '../../../redux/features/selling/sellingSilceAPI';
 const Home = () => {
   const dispatch = useDispatch();
   const {allUsers} = useSelector(state => state.users)
@@ -13,13 +14,11 @@ const Home = () => {
     dispatch(actFetchAllUsers())
   },[])
   
-
   const {allProducts} = useSelector(state=> state.product)
   useEffect(()=>{
     dispatch(actFetchAllProduct())
   },[])
   const product = allProducts.length
-
   const handleCountUser = useMemo(() => {
     return allUsers.reduce((a,b) => {
       if(b.isAdmin === "True") {
@@ -39,7 +38,20 @@ const Home = () => {
     }, {})
   },[allUsers])
   
+  const {allSelling} = useSelector(state => state.selling)
+  useEffect(()=>{
+    dispatch(actFetchAllSelling())
+  },[])
   
+  let tong = 0;
+  for(let a of allSelling){
+    tong += a.quantity * a.price
+  }
+
+  // console.log(allSelling);
+  console.log(tong);
+
+
   return (
     <div className='charts'>
         <div className='charts_top'>
@@ -105,7 +117,7 @@ const Home = () => {
                           <p>Revenue</p>
                         </div>
                         <div>
-                          <label>2500000$</label>
+                          <label>{tong}$</label>
                         </div>
                       </div>
                 </div>

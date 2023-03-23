@@ -12,22 +12,28 @@ const PieChart = () => {
 
   const handleCountProduct = useMemo(() => {
     return allProducts.reduce((a,b) => {
-      if(b.type === "Shirt") {
+      if(b.type === "spring") {
         return {
           ...a,
-          shirt: (a.shirt || 0) + 1
+          springs: (a.springs || 0) + 1
         }
       }
-      if(b.type === "Trousers") {
+      if(b.type === "autumn") {
         return {
           ...a,
-          trousers: (a.trousers || 0) + 1
+          autumns: (a.autumns || 0) + 1
         }
       }
-      if(b.type === "Shorts") {
+      if(b.type === "summer") {
         return {
           ...a,
-          short: (a.short || 0) + 1
+          summers: (a.summers || 0) + 1
+        }
+      }
+      if(b.type === "winter") {
+        return {
+          ...a,
+          winters: (a.winters || 0) + 1
         }
       }
       return {...a}
@@ -36,16 +42,20 @@ const PieChart = () => {
 
   const data = [
     {
-      type: 'Shirt',
-      value: handleCountProduct.shirt,
+      type: 'spring',
+      value: handleCountProduct.springs,
     },
     {
-      type: 'Trousers',
-      value: handleCountProduct.trousers,
+      type: 'autumn',
+      value: handleCountProduct.autumns,
     },
     {
-      type: 'Short',
-      value: handleCountProduct.short,
+      type: 'summer',
+      value: handleCountProduct.summers,
+    },
+    {
+      type: 'winter',
+      value: handleCountProduct.winters,
     },
   ];
 

@@ -12,6 +12,7 @@ const SellingAdmin = () => {
     navigate('/admin/selling/add')
   }
   const {allSelling,isLoading} = useSelector(state=> state.selling)
+  console.log(allSelling);
   useEffect(()=>{
     dispatch(actFetchAllSelling())
   },[])

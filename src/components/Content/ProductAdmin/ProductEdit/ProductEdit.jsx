@@ -68,11 +68,11 @@ const ProductEdit = () => {
           <form className='Add-form' onSubmit={handleUpdateForm}  action="">
             <div className='Add-form__input' >
               <p>Product's name</p>
-              <input type="text" id="admin_name" name="name" value={product.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
+              <input  id="admin_name" name="name" value={product.name} onChange={handleChangeInputForm} placeholder='Please click the Product Name !!!' required/>
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <select type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} >
+              <select  id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} >
                   <option value=""></option>
                   <option value="spring">spring</option>
                   <option value="autumn">autumn</option>

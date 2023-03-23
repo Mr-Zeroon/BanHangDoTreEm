@@ -11,6 +11,7 @@ const initialState = {
     errors:{}
 }
 
+
 export const actFetchAllSelling = createAsyncThunk(
     "selling/fetchSelling",
     async () => {
@@ -57,8 +58,12 @@ export const sellingSlice = createSlice({
 export const actCreateSelling = (selling)=> async (dispatch)=>{
   
     try {
+        const payload = {
+            ...selling,
+            createAt: new Date().getTime()
+        }
         dispatch(actUpdateLoadingCreate(true));//Update status loading
-        await fetchCreateSelling(selling)
+        await fetchCreateSelling(payload)
         await dispatch(actFetchAllSelling())// call API get all selling
     } catch (error) {
         console.log(error);

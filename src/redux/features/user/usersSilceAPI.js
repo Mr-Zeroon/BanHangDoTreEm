@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { deleteUsersByID, fetchAllDataUsers, fetchCreateUsers, fetchDataUsersByID, fetchInfoMe, fetchUpdateUsersById } from "../../../apis/usersApi";
+import { deleteUsersByID, fetchAllDataUsers, fetchCreateUsers, fetchDataUsersByID, fetchInfoMe, fetchSearch, fetchUpdateUsersById } from "../../../apis/usersApi";
 import { BE_URL, KEY_ACCESS_TOKEN, KEY_IS_LOGGER } from "../../../constants/config";
 import * as Jwt  from "jsonwebtoken";
 
 const initialState = {
     allUsers: [],
+    userSearch:[],
     users:{},
     isLoading:false,
     isLoadingCreate:false,
@@ -35,6 +36,10 @@ export const fetchLogin = createAsyncThunk(
 
     }
   );
+  export const actFetchSearch = createAsyncThunk('users/actFetchSearch', async (payload) => {
+    const search = await fetchSearch(payload)
+    return search
+})
 export const usersSlice = createSlice({
     name: 'users',
     initialState,
@@ -72,7 +77,10 @@ export const usersSlice = createSlice({
             state.isLoading=false;
             state.allUsers = action.payload || []
         });
-
+        builder.addCase(actFetchSearch.fulfilled,  (state, action) => {
+            state.isLoading = false;
+            state.userSearch = action.payload || []
+        })
         builder.addCase(actFetchUsersById.fulfilled,(state, action) => {
             state.isLoading = false;
             state.users = action.payload || {}
@@ -140,7 +148,7 @@ export const actReLogin = (accessToken) => async (dispatch) => {
     try {
       const decodeToken = Jwt.decode(accessToken);
       if(decodeToken?.email){
-        const  repsInfo = await fetchInfoMe(decodeToken.email)
+        const repsInfo = await fetchInfoMe(decodeToken.email)
         const infoUser = repsInfo?.data?.[0];
         delete infoUser.password;
         dispatch(actGetMe(infoUser))//Using middleware => dispatch lay thong tin user ki co data

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import {useNavigate } from 'react-router-dom'
+import {useNavigate, useParams } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import Paginations from '../../Panigate/Panigate';
-import { actDeleteUsers, actFetchAllUsers } from '../../../redux/features/user/usersSilceAPI';
+import { actDeleteUsers, actFetchAllUsers, actFetchSearch } from '../../../redux/features/user/usersSilceAPI';
 const Customer = () => {
+  // const param = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [search,setSearch] = useState("")
   const handleAdd = (event) =>{
     event.preventDefault();
     navigate('/admin/customer/add')
@@ -17,28 +19,6 @@ const Customer = () => {
     dispatch(actFetchAllUsers())
   },[])
   
-  const renderDataUsers = (users)=>{
-    if(!users.length) return null
-
-    return users?.map((user)=>(
-      <tr key={user.id}>
-      <td className="text-left">{user.id}</td>
-      <td className="text-left">{user.name}</td>
-      <td className="text-left">{user.address}</td>
-      <td className="text-left">{user.sex}</td>
-      <td className="text-left">{user.email}</td>
-      <td className="text-left">{user.phoneNumber}</td>
-      <td className="text-left">{user.isAdmin}</td>               
-      <td className="text-left">
-        <div className='customer-top__btntable'>
-          <button onClick={() => handleEdit(user.id)}>Edit</button>
-          <button className='Delete' onClick={() => handleDeleteUsers(user.id)}>Delete</button>
-        </div>
-      </td>
-    </tr>)
-    
-    )
-}
 const handleDeleteUsers = (id)=>{
   dispatch(actDeleteUsers(id))
   toast.success('Delete successfully!')
@@ -51,7 +31,13 @@ const handleDeleteUsers = (id)=>{
   
   const lastPostIndex = current * potsPerPage;
   const firstPostIndex = lastPostIndex - potsPerPage;
-  const currentPosts = allUsers.slice(firstPostIndex,lastPostIndex)
+
+  const handleFilterUser = () => {
+    return allUsers.filter((user) => {
+      return user.name.toLowerCase().includes(search.toLowerCase()); 
+    }).slice(firstPostIndex, lastPostIndex);
+  }
+
   return (
     <div className='customer'>
       <div className='customer-top'>
@@ -60,7 +46,7 @@ const handleDeleteUsers = (id)=>{
           </div>
           <div className='customer-top__btn'>
               <div className='customer-top__search'>
-                <input type="text" placeholder='Please enter into....'/>
+                <input type="text" placeholder='Please enter into....' onChange={(e)=>setSearch(e.target.value)}/>
                 <a href=""><i className='bx bx-search'></i></a>
               </div>
               <button  onClick={handleAdd}>ADD</button>
@@ -87,7 +73,25 @@ const handleDeleteUsers = (id)=>{
             </thead>
             <tbody className="table-hover">
               {
-                renderDataUsers(currentPosts)
+                handleFilterUser().map((user) => {
+                  return(
+                    <tr key={user.id}>
+                      <td className="text-left">{user.id}</td>
+                      <td className="text-left">{user.name}</td>
+                      <td className="text-left">{user.address}</td>
+                      <td className="text-left">{user.sex}</td>
+                      <td className="text-left">{user.email}</td>
+                      <td className="text-left">{user.phoneNumber}</td>
+                      <td className="text-left">{user.isAdmin}</td>               
+                      <td className="text-left">
+                        <div className='customer-top__btntable'>
+                          <button onClick={() => handleEdit(user.id)}>Edit</button>
+                          <button className='Delete' onClick={() => handleDeleteUsers(user.id)}>Delete</button>
+                        </div>
+                      </td>
+                    </tr>
+                  )
+                }) 
               }
             </tbody>
           </table>

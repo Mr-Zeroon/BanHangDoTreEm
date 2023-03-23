@@ -21,16 +21,6 @@
       "isAdmin": "True"
     },
     {
-      "email": "tahongduc15@gmail.com",
-      "password": "$2a$10$buDU9Ej8I.1ZTQ3p7jCai.jkvOCSE8XUMBAC36TNW997syGIHw/xq",
-      "id": 1626,
-      "name": "BLS. Mario",
-      "address": "Nghệ An",
-      "sex": "Female",
-      "phoneNumber": "0123456789",
-      "isAdmin": "False"
-    },
-    {
       "email": "tahongduc0333331@gmail.com",
       "password": "$2a$10$b0FPNQGdydJGcqZ/ZpCzHOPH51yLkVT/4/D/xgrmA2U.iJSAsy/cW",
       "id": 692,
@@ -49,47 +39,112 @@
       "sex": "Male",
       "phoneNumber": "0911799629",
       "isAdmin": "False"
+    },
+    {
+      "email": "mamzai97@gmail.com",
+      "password": "$2a$10$fvIag4wnXQ4gXSACNtjX2eDYK0KKlT3QQuhyF6GV63CgwT.NFRAra",
+      "id": 1170,
+      "name": "Nguyễn Văn A",
+      "address": "Doan xem",
+      "sex": "Male",
+      "phoneNumber": "0814650337",
+      "isAdmin": "True"
     }
   ],
   "products": [
     {
-      "id": 1740,
-      "name": "Áo sơ mi",
-      "type": "autumn",
-      "price": "22",
-      "description": "Hàng tốt",
-      "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
-      "rating": "4.5"
-    },
-    {
-      "id": 514,
-      "name": "Quần dài",
-      "type": "spring",
-      "price": "15",
-      "description": "Hàng được xem trước",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZX7_lNKTbNUj5dTNnU1M_dWkbL7tWOaWzOg&usqp=CAU",
-      "rating": "4.5"
-    },
-    {
-      "id": 1181,
-      "name": "Quần đùi",
+      "id": 322,
+      "name": "Ta Hong Duc",
       "type": "winter",
-      "price": "2222",
+      "price": "1",
       "description": "Hàng tốt",
       "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
-      "rating": "3.5"
+      "rating": "4.5"
+    },
+    {
+      "id": 453,
+      "name": "jggggggg",
+      "type": "autumn",
+      "price": "5",
+      "description": "Hàng tốt",
+      "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
+      "rating": "3.5",
+      "createAt": 1678696847002
+    },
+    {
+      "id": 989,
+      "name": "sa",
+      "type": "spring",
+      "price": "55",
+      "description": "Hàng được xem trước",
+      "image": "https://lzd-img-global.slatic.net/g/p/1caa70f2a680041f71023451503046db.jpg_720x720q80.jpg",
+      "rating": "3.5",
+      "createAt": 1678696861914
+    },
+    {
+      "id": 241,
+      "name": "jggggggg",
+      "type": "summer",
+      "price": "5",
+      "description": "Hàng tốt",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZX7_lNKTbNUj5dTNnU1M_dWkbL7tWOaWzOg&usqp=CAU",
+      "rating": "4.5",
+      "createAt": 1678696873760
+    },
+    {
+      "id": 1423,
+      "name": "Ta Hong Duc",
+      "type": "spring",
+      "price": "6",
+      "description": "Hàng tốt",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZX7_lNKTbNUj5dTNnU1M_dWkbL7tWOaWzOg&usqp=CAU",
+      "rating": "3.5",
+      "createAt": 1678696886690
+    },
+    {
+      "id": 1522,
+      "name": "Ta",
+      "type": "autumn",
+      "price": "45",
+      "description": "Hàng tốt",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZX7_lNKTbNUj5dTNnU1M_dWkbL7tWOaWzOg&usqp=CAU",
+      "rating": "3.5",
+      "createAt": 1678951685752
     }
   ],
   "selling": [
     {
-      "id": 1882,
+      "id": 13,
       "idUser": "46",
       "nameUser": "Ta Hong Duc",
       "idProduct": "46",
       "nameProduct": "Ni",
-      "type": "Spring",
-      "quantity": "333",
-      "price": "2"
+      "type": "spring",
+      "quantity": "40",
+      "price": "10",
+      "createAt": 1678951216311
+    },
+    {
+      "id": 1738,
+      "idUser": "22",
+      "nameUser": "aa",
+      "idProduct": "36",
+      "nameProduct": "Ni",
+      "type": "spring",
+      "quantity": "36",
+      "price": "5",
+      "createAt": 1678951239663
+    },
+    {
+      "id": 1592,
+      "idUser": "33",
+      "nameUser": "aa5",
+      "idProduct": "55",
+      "nameProduct": "sad",
+      "type": "spring",
+      "quantity": "30",
+      "price": "6",
+      "createAt": 1678951285400
     }
   ]
 }

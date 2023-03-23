@@ -15,7 +15,7 @@ const ProductAdd = () => {
   const initialFormValue={
     id:Math.floor(Math.random()*2000),
     name:"",
-    type:"Shirt",
+    type:"spring",
     price:"",
     description:"",
     image:"",
@@ -55,11 +55,12 @@ const ProductAdd = () => {
             </div>
             <div className='Add-form__input'>
               <p>Product Type</p>
-              <select type="text" id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} >
+              <select id="admin_type" name="type" value={product.type} onChange={handleChangeInputForm} >
                   <option value=""></option>
-                  <option value="Shirt">Shirt</option>
-                  <option value="Trousers">Trousers</option>
-                  <option value="Shorts">Shorts</option>
+                  <option value="spring">spring</option>
+                  <option value="autumn">autumn</option>
+                  <option value="summer">summer</option>
+                  <option value="winter">winter</option>
               </select>
             </div>
             <div className='Add-form__input'>

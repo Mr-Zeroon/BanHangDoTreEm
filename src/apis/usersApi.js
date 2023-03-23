@@ -23,3 +23,7 @@ export const fetchUpdateUsersById = async(id,payload)=>{
 export const fetchInfoMe = async(email)=>{
     return await axios.get(`${BE_URL}users?email=${email}`)
 }
+//Search
+export const fetchSearch = async(payload)=>{
+    return await axios.get(`${BE_URL}users?q=${payload}`)
+}

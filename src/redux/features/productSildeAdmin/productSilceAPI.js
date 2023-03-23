@@ -14,7 +14,6 @@ export const actFetchAllProduct = createAsyncThunk(
     "product/fetchProduct",
     async () => {
         const data = await fetchAllDataProduct();
-        console.log('jojojo', data);
         return data || []
     }
 )
